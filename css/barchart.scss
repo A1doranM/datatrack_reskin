@@ -1,0 +1,22 @@
+.bar-rect{
+  fill: #FEF301;
+
+  &_overlapping{
+    fill: #999201;
+    opacity: 0.5;
+  }
+}
+
+.gridline{
+  stroke: rgba(255, 255, 255, 0.1);
+  shape-rendering: crispEdges;
+  height: 1px !important;
+}
+
+.domain{
+  opacity: 0;
+}
+
+.tick:first-child{
+  opacity: 0;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "datatrack_reskin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass css/main.scss css/style.css -w",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "concat": "latest",
+    "node-sass": "latest",
+    "npm-run-all": "latest",
+    "sass": "latest"
+  }
+}

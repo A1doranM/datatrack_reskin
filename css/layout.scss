@@ -1,0 +1,17 @@
+.content {
+  position: relative;
+  margin: 32px 40px;
+  padding: 24px 57px 0 57px;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  max-width: 1020px;
+  width: 1020px;
+  min-height: 530px;
+  height: 530px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#762B85), to(#43144D));
+  background: -webkit-linear-gradient(top, #762B85, #43144D);
+  background: -o-linear-gradient(top, #762B85, #43144D);
+  background: linear-gradient(180deg, #762B85, #43144D);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

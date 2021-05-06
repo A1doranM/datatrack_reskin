@@ -1,0 +1,45 @@
+.circle-progress-bar {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__base{
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 8px;
+    stroke-linecap: round;
+  }
+
+  &__bar {
+    stroke: #FEF301;
+    stroke-width: 8px;
+    stroke-linecap: round;
+    transform-origin: center center;
+    transform: rotate(-90deg);
+  }
+
+  &__content {
+    margin-top: 24px;
+    display: block;
+    height: 72px;
+    width: 72px;
+    border-radius: 100%;
+    position: relative;
+  }
+
+  &__content:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: attr(data-pct) "%";
+    border-radius: 100%;
+    font-size: 18px;
+  }
+}

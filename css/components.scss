@@ -15,11 +15,18 @@
   display: flex;
   flex: 0 0 100%;
   align-items: center;
+  justify-content: space-around;
   margin-top: 16px;
   padding: 24px 16px;
   border-radius: 8px;
   background-color: #43144D;
   color: white;
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   &__table {
     width: 40%;
@@ -57,11 +64,6 @@
     text-align: center;
     min-width: 120px;
     width: 120px;
-    margin:0 0 0 27px;
-  }
-
-  &__bar {
-    margin-left: 50px;
   }
 
   &__text {
@@ -93,10 +95,14 @@
     width: 280px;
     min-width: 280px;
     background-color: white;
-    //padding: 24px 16px 0 16px;
+    padding: 24px 24px 0 24px;
     border-radius: 8px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
     height: 520px;
+
+    &_pd16 {
+      padding: 24px 16px 0 16px;
+    }
   }
 
   &__body {
@@ -110,6 +116,7 @@
 
     &_noflex {
       display: inline-block;
+      width: 100%;
       height: 420px;
     }
   }
@@ -170,10 +177,12 @@
   }
 
   &__text {
+    display: block;
     font-size: 14px;
     line-height: 21px;
     text-decoration-line: underline;
     color: #0073BA;
+    text-decoration: underline;
   }
 
 }
@@ -243,14 +252,14 @@
   }
 
   &__description {
+    font-weight: 500;
+    font-size: 12px;
     margin-top: 8px;
   }
 
   &__progressbar {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
+    flex: 0 0 100%;
     justify-content: space-between;
     align-items: center;
 
@@ -263,11 +272,14 @@
 
     &_description {
       flex: 2;
+      min-width: 31px;
+      width: 31px;
       margin-left: 16px;
     }
 
     &_meter > span {
       display: block;
+      height: 100%;
       border-radius: 25px;
       background-color: #762B85;
       overflow: hidden;

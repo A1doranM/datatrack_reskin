@@ -452,6 +452,7 @@ body {
 .circle-progress-bar {
   display: flex;
   flex: 0 0 100%;
+  width: 122px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

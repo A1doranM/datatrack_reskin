@@ -41,6 +41,7 @@ body {
   border-radius: 8px;
   background-color: #43144D;
   color: white;
+  font-family: "Roboto", sans-serif;
 }
 .charts__group {
   display: flex;
@@ -96,7 +97,6 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   align-content: center;
-  position: absolute;
   font-family: "Roboto", sans-serif;
   margin-top: 24px;
 }
@@ -140,7 +140,7 @@ body {
   display: inline-block;
   width: 100%;
   height: 420px;
-  padding-right: 15px;
+  padding-right: 6px;
 }
 .activities__card:not(:first-child):not(:last-child) {
   margin: 0 32px;
@@ -150,22 +150,25 @@ body {
   padding: 12px 16px;
   border: 1px solid #FFFFFF;
   border-radius: 6px;
-  font-weight: 700;
+  font-weight: bold;
+  font-size: 14px;
   background-color: transparent;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 .outlined-btn:hover {
   background-color: white;
   color: #762B85;
+  text-decoration: none;
 }
 
 .arrow_btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   border: none;
   border-radius: 8px;
   background-color: #43144D;
@@ -190,6 +193,8 @@ body {
   line-height: 21px;
   color: #0073BA;
   letter-spacing: 0.25px;
+  text-decoration: underline;
+  font-weight: normal;
 }
 
 .text-item {
@@ -227,16 +232,18 @@ body {
 
 .progress-item {
   padding: 24px 15px 18px 15px;
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.11);
   border-radius: 5px;
   font-size: 12px;
   line-height: 18px;
   color: #242128;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.progress-item:not(:first-child) {
+  margin-top: 16px;
 }
 .progress-item__contact {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   flex: 0 0 100%;
   justify-content: space-between;
@@ -248,7 +255,6 @@ body {
 }
 .progress-item__title {
   margin-top: 8px;
-  font-family: "Roboto", sans-serif;
   font-weight: 550;
   font-size: 16px;
   line-height: 19px;
@@ -265,6 +271,7 @@ body {
   flex: 0 0 100%;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 .progress-item__progressbar_meter {
   flex: 8;
@@ -291,6 +298,8 @@ body {
   flex: 0 0 100%;
   align-items: center;
   justify-content: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
   margin-top: 20px;
   padding: 13px 15px;
   border: 1px solid #CECED9;
@@ -300,7 +309,6 @@ body {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  margin-right: 16px;
 }
 .search__icon {
   height: 15px;
@@ -333,9 +341,16 @@ body {
   background-color: #999201;
 }
 
+.content-wrapper {
+  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
+  padding: 32px 0;
+}
+
 .content {
   position: relative;
-  margin: 32px 40px;
+  margin: 0 auto;
   padding: 24px 57px 0 57px;
   border-radius: 16px;
   max-width: 1020px;
@@ -528,7 +543,7 @@ body {
 .schedule__labels > span::after {
   position: absolute;
   content: "";
-  top: calc(50% - 1px);
+  top: calc(50%);
   left: 0;
   border-radius: 50%;
   width: 8px;

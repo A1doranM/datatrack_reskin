@@ -1,6 +1,13 @@
+.content-wrapper{
+  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
+  padding: 32px 0;
+}
+
 .content {
   position: relative;
-  margin: 32px 40px;
+  margin: 0 auto;
   padding: 24px 57px 0 57px;
   border-radius: 16px;
   max-width: 1020px;

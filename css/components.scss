@@ -87,7 +87,7 @@
   align-items: flex-start;
   align-content: center;
   position: absolute;
-
+  font-family: "Roboto", sans-serif;
   margin-top: 24px;
 
   &__card {
@@ -95,34 +95,17 @@
     width: 280px;
     min-width: 280px;
     background-color: white;
-    padding: 24px 24px 0 24px;
+    padding: 27px 24px 0 24px;
     border-radius: 8px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
     height: 520px;
 
     &_pd16 {
-      padding: 24px 16px 0 16px;
+      padding: 27px 16px 0 16px;
+      .activities__title{
+        padding: 0 8px;
+      }
     }
-  }
-
-  &__body {
-    display: flex;
-    flex: 0 0 100%;
-    flex-wrap: wrap;
-    overflow: auto;
-    align-items: flex-start;
-    margin-top: 26px;
-    height: 320px;
-
-    &_noflex {
-      display: inline-block;
-      width: 100%;
-      height: 420px;
-    }
-  }
-
-  &__card:not(:first-child):not(:last-child) {
-    margin: 0 32px;
   }
 
   &__title {
@@ -131,9 +114,31 @@
     justify-content: space-between;
     align-items: center;
     height: 30px;
-    font-size: 19px;
-    line-height: 20px;
-    font-weight: 700;
+    color: #242128;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__body {
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 24px;
+    height: 320px;
+
+    &_noflex {
+      display: inline-block;
+      width: 100%;
+      height: 420px;
+      padding-right: 15px;
+    }
+  }
+
+  &__card:not(:first-child):not(:last-child) {
+    margin: 0 32px;
   }
 }
 
@@ -170,9 +175,11 @@
 }
 
 .image-item {
+  font-family: "Roboto", sans-serif;
+  width: 100px;
+
   &__image {
-    width: 115px;
-    height: 120px;
+    width: 100%;
     border-radius: 8px;
   }
 
@@ -180,9 +187,8 @@
     display: block;
     font-size: 14px;
     line-height: 21px;
-    text-decoration-line: underline;
     color: #0073BA;
-    text-decoration: underline;
+    letter-spacing: 0.25px;
   }
 
 }
@@ -190,9 +196,10 @@
 .text-item {
   padding-top: 16px;
   margin: 0;
+  font-family: Roboto sans-serif;
 
   &__label {
-    margin-bottom: 8px;
+    margin-bottom: 24px;
     font-weight: bold;
     font-size: 12px;
     line-height: 18px;
@@ -206,15 +213,17 @@
 
   &__title {
     margin-bottom: 8px;
-    font-weight: 650;
-    font-size: 16px;
     line-height: 19px;
+    color: #242128;
+    font-size: 16px;
   }
 
   &__text {
+    font-style: normal;
     font-size: 12px;
     line-height: 18px;
-    font-weight: 500;
+    font-weight: 400;
+    color: #242128;
     padding-bottom: 16px;
     border-bottom: 2px solid #E6E6E6;
   }
@@ -246,15 +255,18 @@
 
   &__title {
     margin-top: 8px;
+    font-family: "Roboto", sans-serif;
     font-weight: 550;
     font-size: 16px;
     line-height: 19px;
   }
 
   &__description {
-    font-weight: 500;
-    font-size: 12px;
     margin-top: 8px;
+    font-size: 12px;
+    font-family: Roboto sans-serif;
+    font-style: normal;
+    font-weight: normal;
   }
 
   &__progressbar {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass css/main.scss forArchive/css/style.css -w",
+    "watch:sass": "node-sass members_table/css/main.scss forArchive/css/style.css -w",
     "start": "npm-run-all --parallel devserver watch:sass"
   },
   "keywords": [],

@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
-  padding: 24px;
+  padding: 20px 24px 24px 24px;
   border-radius: 8px;
   background-color: #43144D;
   color: white;
@@ -53,7 +53,7 @@
   }
 
   &__table td {
-    padding: 11px 8px;
+    padding: 8px;
     font-size: 16px;
     font-weight: 500;
   }
@@ -137,6 +137,10 @@
     &_mt-19 {
       margin-top: 19px;
     }
+
+    &:nth-child(2n){
+      margin-left: 10px;
+    }
   }
 
   &__card:not(:first-child):not(:last-child) {
@@ -186,7 +190,7 @@
 
 .image-item {
   font-family: "Roboto", sans-serif;
-  width: 103px;
+  width: 116px;
 
   &:not(:nth-child(-n+2)) {
     margin-top: 19px;

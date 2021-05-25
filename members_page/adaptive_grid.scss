@@ -1,0 +1,168 @@
+.member-grid {
+  display: grid;
+  grid-template-columns: [col-left-start] minmax(328px, 4fr) [col-left-end col-right-start] minmax(328px, 8fr) [col-right-end];
+  grid-template-rows: auto auto auto auto auto auto;
+
+  &__right {
+    padding-left: 12px;
+  }
+
+  &__left {
+    padding-right: 12px;
+  }
+
+  &__subgrid {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-template-rows: auto auto auto auto;
+    order: 3;
+    margin-left: 12px;
+  }
+
+  &_ml-12 {
+    margin-left: 12px;
+  }
+
+  &_mr-12 {
+    margin-right: 12px;
+  }
+}
+
+.services {
+  order: 1;
+}
+
+.notes {
+  order: 2;
+  margin-left: 12px;
+}
+
+.quicknotes {
+  order: 3;
+}
+
+.timeline {
+  order: 5;
+}
+
+.personal {
+  grid-row: span 2;
+  margin-right: 12px;
+}
+
+.billing {
+  margin-left: 12px;
+}
+
+.agreement {
+  margin-left: 12px;
+}
+
+.purchase {
+  order: 6;
+}
+
+@media (max-width: 768px) {
+  .member-status-row {
+    margin-bottom: 0;
+  }
+
+  .icon-link {
+    margin-right: 0;
+  }
+
+  .section .cards-panel {
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .notes {
+    order: 1;
+    grid-column: span 2;
+    margin-left: 0;
+    grid-row: span 1;
+  }
+
+  .services {
+    order: 2;
+  }
+
+  .member-grid__subgrid {
+    order: 3;
+    grid-row: span 4;
+  }
+
+  .quicknotes {
+    order: 4;
+    grid-row: span 1;
+  }
+
+  .personal {
+    grid-column: span 2;
+    grid-row: span 2;
+    margin-right: 0;
+  }
+
+  .billing {
+    grid-column: span 2;
+    margin-left: 0;
+  }
+
+  .agreement {
+    grid-column: span 2;
+    margin-left: 0;
+  }
+
+  .purchase {
+    grid-column: span 2;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .services {
+    grid-column: span 2;
+    order: 1;
+  }
+
+  .notes {
+    order: 2;
+    margin-left: 0;
+    grid-column: span 2;
+  }
+
+  .member-grid__subgrid {
+    grid-column: span 2;
+    order: 3;
+    grid-row: span 4;
+  }
+
+  .quicknotes {
+    grid-column: span 2;
+    order: 3;
+  }
+
+  .timeline {
+    grid-column: span 2;
+    order: 5;
+  }
+
+  .personal {
+    grid-row: span 2;
+    margin-right: 12px;
+  }
+
+  .billing {
+    margin-left: 12px;
+  }
+
+  .agreement {
+    margin-left: 12px;
+  }
+
+  .purchase {
+    grid-column: span 2;
+    order: 6;
+  }
+}

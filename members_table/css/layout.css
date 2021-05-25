@@ -1,3 +1,98 @@
+.ag-theme-bootstrap {
+  padding: 0;
+  cursor: default;
+  border: none;
+  filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.07));
+  background-color: transparent !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  text-decoration: none;
+}
 
+.ag-theme-bootstrap .ag-header {
+  border: none;
+}
+
+.ag-theme-bootstrap .ag-header-row {
+  border: none;
+  background-color: transparent !important;
+}
+
+.ag-theme-bootstrap .ag-row {
+  border: none;
+}
+
+.ag-theme-bootstrap .ag-cell {
+  border: none;
+}
+
+.abc-header-cell-text {
+  color: #75707D;
+}
+
+.ag-header-row {
+  background-color: transparent !important;
+}
+
+.ag-theme-bootstrap .ag-header-container, .ag-header-viewport, .ag-header-row {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 0;
+  cursor: default;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.ag-theme-bootstrap .ag-header-container, .ag-header-viewport, .ag-header-row {
+  background-color: transparent !important;
+}
+
+.ag-header-container, .ag-header-viewport, .ag-header-row {
+  background-color: transparent !important;
+}
+
+.ag-theme-bootstrap .ag-header-cell {
+  padding: 9px 0;
+}
+
+.ag-theme-bootstrap .ag-row-no-focus {
+  background-color: white;
+}
+
+.ag-theme-bootstrap .ag-cell {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  padding: 13px 0;
+}
+
+.ag-theme-bootstrap .ag-cell:first-child, .ag-theme-bootstrap .ag-ltr .ag-cell-focus:first-child {
+  padding-right: 24px;
+}
+
+.ag-theme-bootstrap .ag-cell.ag-cell-not-inline-editing.ag-cell-with-height.ag-cell-no-focus.ag-cell-value:first-child:first-child {
+  font-size: 14px;
+  color: #242128;
+}
+
+.underlined {
+  font-size: 14px;
+  text-decoration-line: underline;
+  color: #0072BA;
+}
+
+.sort-btn {
+  margin-left: 8px;
+  cursor: pointer;
+  width: 8px;
+  height: 4px;
+}
+
+.ag-theme-bootstrap .ag-cell-with-height {
+  height: auto;
+}
 
 /*# sourceMappingURL=layout.css.map */

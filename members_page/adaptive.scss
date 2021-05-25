@@ -1,0 +1,37 @@
+.notes {
+  height: min-content;
+}
+
+
+@media (max-width: 768px) {
+  .member-status-row {
+    margin-bottom: 0;
+  }
+
+  .icon-link {
+    margin-right: 0;
+  }
+
+  .agreement-page .card-body, .section.personal .card-body {
+    padding: 0;
+  }
+
+  .section .cards-panel {
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .member-cards-wrapper {
+    position: relative;
+  }
+
+}
+
+@media (max-width: 767px) {
+  #personal_billing_agreement_absolute-container {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}

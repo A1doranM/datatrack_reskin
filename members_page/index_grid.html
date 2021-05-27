@@ -86,15 +86,17 @@
                     <h4 class="navbar-title">Services</h4>
                     <button class="btn chevron primary-color-bg" onclick="gotoPage('Services');"></button>
                 </nav>
-                <ul>
-                    <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
-                        <li>
-                            <a class="link-primary" href="#">
-                                <dt:value javaScriptSafe="1" property="serviceName"/>
-                            </a>
-                        </li>
-                    </dt:iterate>
-                </ul>
+                <div class="scrollbar-macosx">
+                    <ul>
+                        <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
+                            <li>
+                                <a class="link-primary" href="#">
+                                    <dt:value javaScriptSafe="1" property="serviceName"/>
+                                </a>
+                            </li>
+                        </dt:iterate>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="section card notes">
@@ -130,28 +132,23 @@
 
             </div>
         </div>
-        <div class="section card quicknotes member-grid_mr-12">
+        <div class="section card events member-grid_mr-12">
             <div class="card-body">
-                <nav class="navbar navbar-expand-lg bg-white">
-                    <h4 class="navbar-title">Quick Links</h4>
+                <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
+                    <h4 class="navbar-title">Events</h4>
+                    <button class="btn chevron primary-color-bg" onclick="gotoPage('Services');"></button>
                 </nav>
-                <ul class="list-unstyled">
-                    <li>
-                        <a class="link-primary" href="#">Member Alerts</a>
-                    </li>
-                    <li>
-                        <a class="link-primary" href="#">Activities</a>
-                    </li>
-                    <li>
-                        <a class="link-primary" href="#">Check In History</a>
-                    </li>
-                    <li>
-                        <a class="link-primary" href="#">User Defined Fields</a>
-                    </li>
-                    <li>
-                        <a class="link-primary" href="#">Documents</a>
-                    </li>
-                </ul>
+                <div class="scrollbar-macosx">
+                    <ul>
+                        <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
+                            <li>
+                                <a class="link-primary" href="#">
+                                    <dt:value javaScriptSafe="1" property="serviceName"/>
+                                </a>
+                            </li>
+                        </dt:iterate>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="member-grid__subgrid member-grid_ml-12">
@@ -231,24 +228,30 @@
                                 <dd>
                                     <dt:ifEqual first="${prospect}" second="1">--</dt:ifEqual>
                                     <dt:ifNotEqual first="${prospect}" second="1">
-                                        <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
+                                        <dt:ifEqual first="${managedType}"
+                                                    second="<%=PatronEnum.ABCMANAGED.toString()%>">
                                             <dt:ifEqual first="${selectedMemberId}" second="${primaryMemberId}">
                                                 <dt:setPageContextAttribute name="isPrimaryMemberSelected" value="1"/>
                                             </dt:ifEqual>
                                         </dt:ifEqual>
                                         <dt:childBean nameValuePair="0" property="membershipAccount">
-                                            <dt:ifEqual first="<%= (String) pageContext.getAttribute( "isPrimaryMemberSelected", PageContext.PAGE_SCOPE ) %>" second="1">
+                                            <dt:ifEqual first="<%= (String) pageContext.getAttribute( "
+                                                        isPrimaryMemberSelected
+                                            ", PageContext.PAGE_SCOPE ) %>" second="1">
                                             <a class="link-primary" href="#" onclick="setAbcBillingPaymentOption();">
-                                                <dt:value property="paymentMethod" javaScriptSafe="1" />
+                                                <dt:value property="paymentMethod" javaScriptSafe="1"/>
                                                 <dt:ifNotEqual first="${paymentLastFour}" second="">
-                                                    &nbsp;-&nbsp;<dt:value property="paymentLastFour" javaScriptSafe="1" />
+                                                    &nbsp;-&nbsp;<dt:value property="paymentLastFour"
+                                                                           javaScriptSafe="1"/>
                                                 </dt:ifNotEqual>
                                             </a>
                                             </dt:ifEqual>
-                                            <dt:ifNotEqual first="<%= (String) pageContext.getAttribute( "isPrimaryMemberSelected", PageContext.PAGE_SCOPE ) %>" second="1">
-                                            <dt:value property="paymentMethod" javaScriptSafe="1" />
+                                            <dt:ifNotEqual first="<%= (String) pageContext.getAttribute( "
+                                                           isPrimaryMemberSelected
+                                            ", PageContext.PAGE_SCOPE ) %>" second="1">
+                                            <dt:value property="paymentMethod" javaScriptSafe="1"/>
                                             <dt:ifNotEqual first="${paymentLastFour}" second="">
-                                                &nbsp;-&nbsp;<dt:value property="paymentLastFour" javaScriptSafe="1" />
+                                                &nbsp;-&nbsp;<dt:value property="paymentLastFour" javaScriptSafe="1"/>
                                             </dt:ifNotEqual>
                                     </dt:ifNotEqual>
                                     </dt:childBean>
@@ -257,9 +260,11 @@
                                 <dt>LATE FEE</dt>
                                 <dd>
                                     <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcLastFeeTotal" javaScriptSafe="1" />
+                                        <dt:value property="abcLastFeeTotal" javaScriptSafe="1"/>
                                     </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00</dt:ifNotEqual>
+                                    <dt:ifNotEqual first="${managedType}"
+                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                    </dt:ifNotEqual>
                                 </dd>
                             </dl>
                         </div>
@@ -268,15 +273,19 @@
                                 <dt>TOTAL NEXT DUE</dt>
                                 <dd>
                                     <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcTotalNextDue" javaScriptSafe="1" />
+                                        <dt:value property="abcTotalNextDue" javaScriptSafe="1"/>
                                     </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00</dt:ifNotEqual>
+                                    <dt:ifNotEqual first="${managedType}"
+                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                    </dt:ifNotEqual>
                                 <dt>PAST DUE</dt>
                                 <dd>
                                     <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcTotalDue" javaScriptSafe="1" />
+                                        <dt:value property="abcTotalDue" javaScriptSafe="1"/>
                                     </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00</dt:ifNotEqual>
+                                    <dt:ifNotEqual first="${managedType}"
+                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                    </dt:ifNotEqual>
                                 </dd>
                             </dl>
                         </div>
@@ -295,21 +304,51 @@
                         <div class="col-md-6">
                             <dl>
                                 <dt>AGREEMENT #</dt>
-                                <dd><dt:value property="agreementNumber" javaScriptSafe="1" /></dd>
+                                <dd>
+                                    <dt:value property="agreementNumber" javaScriptSafe="1"/>
+                                </dd>
                                 <dt>PAY FREQUENCY</dt>
-                                <dd><dt:value property="paymentFrequency" javaScriptSafe="0"/></dd>
+                                <dd>
+                                    <dt:value property="paymentFrequency" javaScriptSafe="0"/>
+                                </dd>
                             </dl>
                         </div>
                         <div class="col-md-6">
                             <dl>
                                 <dt>TERM</dt>
-                                <dd><dt:value property="agreementTerm" javaScriptSafe="1" /></dd>
+                                <dd>
+                                    <dt:value property="agreementTerm" javaScriptSafe="1"/>
+                                </dd>
                             </dl>
                         </div>
                     </div>
                     <a class="link-primary font-weight-bold text-decoration-none action" onclick="gotoPage('Documents')"
                        href="#">VIEW DOCUMENTS</a>
                 </div>
+            </div>
+        </div>
+        <div class="section card quicknotes member-grid_mr-12">
+            <div class="card-body">
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <h4 class="navbar-title">Quick Links</h4>
+                </nav>
+                <ul class="list-unstyled">
+                    <li>
+                        <a class="link-primary" href="#">Member Alerts</a>
+                    </li>
+                    <li>
+                        <a class="link-primary" href="#">Activities</a>
+                    </li>
+                    <li>
+                        <a class="link-primary" href="#">Check In History</a>
+                    </li>
+                    <li>
+                        <a class="link-primary" href="#">User Defined Fields</a>
+                    </li>
+                    <li>
+                        <a class="link-primary" href="#">Documents</a>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="section card timeline member-grid_mr-12">
@@ -322,13 +361,15 @@
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Past 30 Days
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">Today</a>
-                                <a class="dropdown-item" href="#">Yesterday</a>
-                                <a class="dropdown-item" href="#">This week</a>
-                                <a class="dropdown-item" href="#">Last week</a>
-                                <a class="dropdown-item" href="#">This month</a>
-                                <a class="dropdown-item" href="#">Last month</a>
+                            <div class="scrollbar-macosx">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Today</a>
+                                    <a class="dropdown-item" href="#">Yesterday</a>
+                                    <a class="dropdown-item" href="#">This week</a>
+                                    <a class="dropdown-item" href="#">Last week</a>
+                                    <a class="dropdown-item" href="#">This month</a>
+                                    <a class="dropdown-item" href="#">Last month</a>
+                                </div>
                             </div>
                         </li>
                     </ul>

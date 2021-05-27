@@ -13,8 +13,8 @@
   display: grid;
   grid-template-columns: 6fr 6fr;
   grid-template-rows: auto auto auto auto;
-  order: 3;
   margin-left: 12px;
+  grid-row: span 2;
 }
 .member-grid_ml-12 {
   margin-left: 12px;
@@ -25,6 +25,7 @@
 
 .services {
   order: 1;
+  height: 260px;
 }
 
 .notes {
@@ -32,12 +33,22 @@
   margin-left: 12px;
 }
 
-.quicknotes {
+.events {
   order: 3;
+  height: 260px;
+}
+
+.member-grid__subgrid {
+  order: 4;
+}
+
+.quicknotes {
+  order: 5;
 }
 
 .timeline {
-  order: 5;
+  order: 6;
+  height: 306px;
 }
 
 .personal {
@@ -54,7 +65,7 @@
 }
 
 .purchase {
-  order: 6;
+  order: 7;
 }
 
 @media (max-width: 768px) {
@@ -67,9 +78,7 @@
   }
 
   .section .cards-panel {
-    padding: 0 12px;
     display: flex;
-    justify-content: space-between;
   }
 
   .notes {
@@ -88,9 +97,12 @@
     grid-row: span 4;
   }
 
-  .quicknotes {
+  .events {
     order: 4;
-    grid-row: span 1;
+  }
+
+  .quicknotes {
+    order: 5;
   }
 
   .personal {
@@ -125,20 +137,25 @@
     grid-column: span 2;
   }
 
-  .member-grid__subgrid {
+  .events {
     grid-column: span 2;
     order: 3;
+  }
+
+  .member-grid__subgrid {
+    grid-column: span 2;
+    order: 4;
     grid-row: span 4;
   }
 
   .quicknotes {
     grid-column: span 2;
-    order: 3;
+    order: 5;
   }
 
   .timeline {
     grid-column: span 2;
-    order: 5;
+    order: 6;
   }
 
   .personal {
@@ -156,7 +173,7 @@
 
   .purchase {
     grid-column: span 2;
-    order: 6;
+    order: 7;
   }
 }
 

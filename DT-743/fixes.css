@@ -1,0 +1,17 @@
+.top_and_bottom_mr_12 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.mb_24 {
+    margin-bottom: 24px;
+}
+
+.no_margins {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.height-100{
+    height: 100%
+}

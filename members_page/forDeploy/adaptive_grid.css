@@ -1,3 +1,29 @@
+.inner-container {
+  width: 1035px;
+  margin: 0 auto;
+}
+
+.purchase-items > * {
+  margin-right: 10px;
+}
+.purchase-items:last-child {
+  margin-right: 0;
+}
+
+.agreement-page .card-body,
+.section.personal .card-body {
+  padding: 0;
+}
+
+.p-item .card-body {
+  padding: 0;
+}
+
+.agreement-page .link-primary.action,
+.agreement-page .p-item a {
+  font-size: 16px;
+}
+
 .member-grid {
   display: -ms-grid;
   display: grid;
@@ -5,6 +31,10 @@
   grid-template-columns: [col-left-start] minmax(328px, 4fr) [col-left-end col-right-start] minmax(328px, 8fr) [col-right-end];
   -ms-grid-rows: auto auto auto auto auto auto;
   grid-template-rows: auto auto auto auto auto auto;
+  margin-bottom: 25px;
+}
+.member-grid__card {
+  height: 260px;
 }
 .member-grid__right {
   padding-left: 12px;
@@ -29,7 +59,10 @@
 .member-grid_mr-12 {
   margin-right: 12px;
 }
-
+.inner-list {
+  height: 179px;
+  overflow: auto;
+}
 .services {
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
@@ -37,6 +70,7 @@
   height: 260px;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .notes {
@@ -55,6 +89,7 @@
   height: 260px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .member-grid__subgrid {
@@ -81,6 +116,7 @@
   height: 306px;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .personal {
@@ -112,6 +148,10 @@
 }
 
 @media (max-width: 768px) {
+  .inner-container {
+    width: 100%;
+  }
+
   .member-status-row {
     margin-bottom: 0;
   }

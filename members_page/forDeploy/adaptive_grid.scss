@@ -42,6 +42,7 @@
   height: 260px;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .notes {
@@ -60,6 +61,7 @@
   height: 260px;
   -ms-grid-row: 2;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .member-grid__subgrid{
@@ -86,6 +88,7 @@
   height: 306px;
   -ms-grid-row: 4;
   -ms-grid-column: 1;
+  overflow: auto;
 }
 
 .personal {

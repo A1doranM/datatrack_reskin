@@ -1,7 +1,90 @@
+//292 + 481 + 258
+
+.inner-container {
+  width: 1035px;
+  margin: 0 auto;
+}
+
+.breadcrumb-general {
+  margin: 0;
+  padding: 25px 0;
+}
+
+.general {
+  display: grid;
+  grid-template-columns: minmax(292px, 3fr) 9fr;
+
+  height: 304px;
+  margin: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.06);
+  padding: 12px;
+
+  &__image {
+    width: 280px;
+    height: 280px;
+    position: relative;
+  }
+
+  &__info {
+    padding-top: 20px;
+    margin-left: 40px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__status-row {
+    display: flex;
+    padding: 0 !important;
+    margin-top: 24px;
+
+    & > * {
+      margin-right: 40px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__call-to-action{
+    display: flex;
+    margin-top: 50px;
+  }
+}
+
+.user-image-wrap {
+  margin: 12px;
+}
+
+.purchase-items {
+  & > * {
+    margin-right: 10px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.timeline-nav-link {
+  line-height: initial;
+  padding: 0;
+}
+
+.agreement-page .link-primary.action,
+.agreement-page .p-item a {
+  font-size: 16px;
+}
+
 .member-grid {
   display: grid;
   grid-template-columns: [col-left-start] minmax(328px, 4fr) [col-left-end col-right-start] minmax(328px, 8fr) [col-right-end];
   grid-template-rows: auto auto auto auto auto auto;
+  margin-bottom: 25px;
 
   &__right {
     padding-left: 12px;
@@ -9,6 +92,10 @@
 
   &__left {
     padding-right: 12px;
+  }
+
+  &__card {
+    height: 260px;
   }
 
   &__subgrid {
@@ -28,6 +115,11 @@
   }
 }
 
+.inner-list {
+  height: 179px;
+  overflow: auto;
+}
+
 .services {
   order: 1;
   height: 260px;
@@ -36,14 +128,27 @@
 .notes {
   order: 2;
   margin-left: 12px;
+
+  &__author {
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.0882353px;
+    color: #737373;
+  }
+
+  &__add {
+    margin-top: 28px;
+  }
 }
 
 .events {
   order: 3;
   height: 260px;
+  overflow: auto;
 }
 
-.member-grid__subgrid{
+.member-grid__subgrid {
   order: 4;
 }
 
@@ -54,6 +159,7 @@
 .timeline {
   order: 6;
   height: 306px;
+  overflow: auto;
 }
 
 .personal {
@@ -63,6 +169,11 @@
 
 .billing {
   margin-left: 12px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .agreement {
@@ -74,8 +185,31 @@
 }
 
 @media (max-width: 768px) {
-  .member-status-row {
-    margin-bottom: 0;
+  .inner-container {
+    width: 680px;
+  }
+
+  .general {
+    height: 405px;
+    grid-template-columns: minmax(292px, 4fr) 8fr;
+
+    &__info {
+      margin-left: 30px;
+    }
+
+    &__status-row {
+      & > * {
+        margin-right: 0;
+      }
+    }
+
+    &__status-cell {
+      flex-basis: 100%;
+    }
+
+    &__call-to-action{
+      margin-top: 7px;
+    }
   }
 
   .icon-link {

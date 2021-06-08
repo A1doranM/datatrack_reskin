@@ -1,4 +1,5 @@
 <div class="container-fluid h-100 bg-light agreement-page">
+
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-general">
             <li class="breadcrumb-item"><a href="#">Members</a></li>
@@ -10,9 +11,8 @@
 
     <div class="section general">
         <div class="general__image">
-            <img id="pictureImage"
-                 onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
-                 src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="card-img">
+            <img id="pictureImage" onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
+                 src="<dt:value property=" bootstrapPictureSource" javaScriptSafe="0"/>" class="card-img" />
         </div>
         <div class="general__info">
             <h1 class="general__title">
@@ -48,99 +48,98 @@
                 </dl>
             </div>
             <div class="general__call-to-action">
-                <a href="javascript:goQuickEnroll();" class="icon-link text-decoration-none">
-                    <i class="fa-bell fab ico-enroll"></i>
+                <a class="icon-link text-decoration-none general__icon-link"
+                   href="javascript:goQuickEnroll();">
+                    <i class="fa-bell fab ico-enroll no-padding"></i>
                     <span>Quick Enroll</span>
                 </a>
-                <a href="#" class="icon-link text-decoration-none">
-                    <i class="fa-bell fab ico-alert"></i>
+                <a href="#" class="icon-link text-decoration-none general__icon-link">
+                    <i class="fa-bell fab ico-alert no-padding"></i>
                     <span>Create Alert</span>
                 </a>
-                <a href="javascript:window.parent.goFromMenuClick('/CalendarCommand.pml?menuClick=true', 'CalendarCommand');"
-                   class="icon-link text-decoration-none">
-                    <i class="fa-bell fab ico-calendar"></i>
+                <a class="icon-link text-decoration-none general__icon-link"
+                   href="javascript:window.parent.goFromMenuClick('/CalendarCommand.pml?menuClick=true', 'CalendarCommand');">
+                    <i class="fa-bell fab ico-calendar no-padding"></i>
                     <span>Calendar</span>
                 </a>
-                <a href="javascript:window.parent.goFromMenuClick('/PointOfSaleCommand3.pml?menuClick=true', 'PointOfSaleCommand3');"
-                   class="icon-link text-decoration-none">
-                    <i class="fa-bell fab ico-dollar"></i>
+                <a class="icon-link text-decoration-none general__icon-link"
+                   href="javascript:window.parent.goFromMenuClick('/PointOfSaleCommand3.pml?menuClick=true', 'PointOfSaleCommand3');">
+                    <i class="fa-bell fab ico-dollar no-padding"></i>
                     <span>POS</span>
                 </a>
             </div>
         </div>
     </div>
+
     <div class="member-grid">
-        <div class="section member-grid__card card services member-grid_mr-12">
-            <div class="card-body">
+        <div class="section member-grid__card card services member-grid_fixed-card-height">
+            <div class="member-grid__card-header">
                 <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                     <h4 class="navbar-title">Services</h4>
                     <button class="btn chevron primary-color-bg" onclick="gotoPage('Services');"></button>
                 </nav>
-                <div class="bt-scroll">
-                    <div class="inner-list scrollbar-macosx">
-                        <ul>
-                            <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
-                                <li>
-                                    <a class="link-primary" href="#">
-                                        <dt:value javaScriptSafe="1" property="serviceName"/>
-                                    </a>
-                                </li>
-                            </dt:iterate>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            <div class="scrollbar-macosx member-grid__card-content scrollable-height">
+                <ul>
+                    <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
+                        <li>
+                            <a class="link-primary" href="#">
+                                <dt:value javaScriptSafe="1" property="serviceName"/>
+                            </a>
+                        </li>
+                    </dt:iterate>
+                </ul>
             </div>
         </div>
-        <div class="section member-grid__card card notes">
-            <div class="card-body">
+        <div class="section member-grid__card card notes member-grid_fixed-card-height">
+            <div class="member-grid__card-header">
                 <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                     <h4 class="navbar-title">Notes</h4>
                     <button class="btn chevron primary-color-bg" onclick="gotoPage('Notes');"></button>
                 </nav>
-
-                <div class="notes-container">
-                    <dt:iterate property="lastDatatrakNotes" index="index" nameValuePair="1">
-                        <div class="datatrak-note">
-                            <div class="note-text">
-                                <dt:value javaScriptSafe="0" property="note"/>
-                            </div>
-                            <small class="text-muted">
-                                <dt:value property="createdLocal" javaScriptSafe="0"/>
-                                at
-                                <dt:value property="createdAt" javaScriptSafe="0"/>
-                                -
-                                <dt:value property="takenBy" javaScriptSafe="0"/>
-                            </small>
-                        </div>
-                    </dt:iterate>
-                </div>
-                <div class="notes__author"></div>
-                <a class="link-primary font-weight-bold text-decoration-none action notes__add" onclick="createNote();"
-                   href="#">+
-                    ADD NOTE</a>
-
             </div>
+
+            <div class="scrollbar-macosx member-grid__card-content scrollable-height_108">
+                <dt:iterate property="lastDatatrakNotes" index="index" nameValuePair="1">
+                    <div class="datatrak-note">
+                        <div class="note-text no-padding">
+                            <dt:value javaScriptSafe="0" property="note"/>
+                        </div>
+                        <small class="text-muted">
+                            <dt:value property="createdLocal" javaScriptSafe="0"/>
+                            at
+                            <dt:value property="createdAt" javaScriptSafe="0"/>
+                            -
+                            <dt:value property="takenBy" javaScriptSafe="0"/>
+                        </small>
+                    </div>
+                </dt:iterate>
+            </div>
+
+            <a class="link-primary font-weight-bold text-decoration-none action notes__add" onclick="createNote();"
+               href="#">+
+                ADD NOTE</a>
         </div>
-        <div class="section member-grid__card card events member-grid_mr-12">
-            <div class="card-body">
+        <div class="section member-grid__card card events member-grid_fixed-card-height">
+            <div class="member-grid__card-header">
                 <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                     <h4 class="navbar-title">Events</h4>
                     <button class="btn chevron primary-color-bg" onclick="gotoPage('Services');"></button>
                 </nav>
-                <div class="inner-list scrollbar-macosx">
-                    <ul>
-                        <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
-                            <li>
-                                <a class="link-primary" href="#">
-                                    <dt:value javaScriptSafe="1" property="serviceName"/>
-                                </a>
-                            </li>
-                        </dt:iterate>
-                    </ul>
-                </div>
+            </div>
+            <div class="scrollbar-macosx member-grid__card-content scrollable-height">
+                <ul>
+                    <dt:iterate nameValuePair="0" property="purchasedServices" index="index">
+                        <li>
+                            <a class="link-primary" href="#">
+                                <dt:value javaScriptSafe="1" property="serviceName"/>
+                            </a>
+                        </li>
+                    </dt:iterate>
+                </ul>
             </div>
         </div>
-        <div class="member-grid__subgrid member-grid_ml-12">
+        <div class="member-grid__subgrid">
             <div class="section card personal">
                 <div class="card-body">
                     <nav class="navbar navbar-expand-lg navbar-light bg-white" style="justify-content: space-between;">
@@ -151,8 +150,8 @@
                         <dt>EMAIL</dt>
                         <dd>
                             <dt:ifNotEqual first="${email}" second="">
-                                <a class="link-primary" href="#" onclick="sendMail('<dt:value javaScriptSafe=" 1"
-                                property="memberId"/>')" style="">
+                                <a class="link-primary" href="#" onclick="sendMail('<dt:value javaScriptSafe=" 1"property="memberId"/>')"
+                                style="">
                                 <dt:value property="email" javaScriptSafe="1"/>
                                 </a>
                             </dt:ifNotEqual>
@@ -202,7 +201,7 @@
                     </dl>
                 </div>
             </div>
-            <div class="section member-grid__card card billing">
+            <div class="section member-grid__card card billing member-grid_fixed-card-height">
                 <div class="card-body">
                     <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                         <h4 class="navbar-title">Billing</h4>
@@ -210,105 +209,122 @@
                             <button class="btn chevron primary-color-bg" onclick="gotoPage('Billing');"></button>
                         </dt:ifNotEqual>
                     </nav>
-                    <div class="billing__content">
-                        <div>
-                            <dl>
-                                <dt>PRIMARY</dt>
-                                <dd>
-                                    <dt:ifEqual first="${prospect}" second="1">--</dt:ifEqual>
-                                    <dt:ifNotEqual first="${prospect}" second="1">
-                                        <dt:ifEqual first="${managedType}"
-                                                    second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                            <dt:ifEqual first="${selectedMemberId}" second="${primaryMemberId}">
-                                                <dt:setPageContextAttribute name="isPrimaryMemberSelected" value="1"/>
+                    <div class="data-card">
+                        <div class="data-card__row">
+                            <div class="data-card__col-left">
+                                <div class="data-card__item">
+                                    <div class="data-card__header">PRIMARY</div>
+                                    <div class="data-card__text">
+                                        <dt:ifEqual first="${prospect}" second="1">--</dt:ifEqual>
+                                        <dt:ifNotEqual first="${prospect}" second="1">
+                                            <dt:ifEqual first="${managedType}"
+                                                        second="<%=PatronEnum.ABCMANAGED.toString()%>">
+                                                <dt:ifEqual first="${selectedMemberId}" second="${primaryMemberId}">
+                                                    <dt:setPageContextAttribute name="isPrimaryMemberSelected"
+                                                                                value="1"/>
+                                                </dt:ifEqual>
                                             </dt:ifEqual>
-                                        </dt:ifEqual>
-                                        <dt:childBean nameValuePair="0" property="membershipAccount">
-                                            <dt:ifEqual first="<%= (String) pageContext.getAttribute( "
-                                                        isPrimaryMemberSelected
-                                            ", PageContext.PAGE_SCOPE ) %>" second="1">
-                                            <a class="link-primary" href="#" onclick="setAbcBillingPaymentOption();">
+                                            <dt:childBean nameValuePair="0" property="membershipAccount">
+                                                <dt:ifEqual first="<%= (String) pageContext.getAttribute( \"
+                                                            isPrimaryMemberSelected\
+                                                ", PageContext.PAGE_SCOPE ) %>" second="1">
+                                                <a class="link-primary" href="#"
+                                                   onclick="setAbcBillingPaymentOption();">
+                                                    <dt:value property="paymentMethod" javaScriptSafe="1"/>
+                                                    <dt:ifNotEqual first="${paymentLastFour}" second="">
+                                                        &nbsp;-&nbsp;<dt:value property="paymentLastFour"
+                                                                               javaScriptSafe="1"/>
+                                                    </dt:ifNotEqual>
+                                                </a>
+                                                </dt:ifEqual>
+                                                <dt:ifNotEqual first="<%= (String) pageContext.getAttribute( \"
+                                                               isPrimaryMemberSelected\
+                                                ", PageContext.PAGE_SCOPE ) %>" second="1">
                                                 <dt:value property="paymentMethod" javaScriptSafe="1"/>
                                                 <dt:ifNotEqual first="${paymentLastFour}" second="">
                                                     &nbsp;-&nbsp;<dt:value property="paymentLastFour"
                                                                            javaScriptSafe="1"/>
                                                 </dt:ifNotEqual>
-                                            </a>
-                                            </dt:ifEqual>
-                                            <dt:ifNotEqual first="<%= (String) pageContext.getAttribute( "
-                                                           isPrimaryMemberSelected
-                                            ", PageContext.PAGE_SCOPE ) %>" second="1">
-                                            <dt:value property="paymentMethod" javaScriptSafe="1"/>
-                                            <dt:ifNotEqual first="${paymentLastFour}" second="">
-                                                &nbsp;-&nbsp;<dt:value property="paymentLastFour" javaScriptSafe="1"/>
-                                            </dt:ifNotEqual>
-                                    </dt:ifNotEqual>
-                                    </dt:childBean>
-                                    </dt:ifNotEqual>
-                                </dd>
-                                <dt>LATE FEE</dt>
-                                <dd>
-                                    <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcLastFeeTotal" javaScriptSafe="1"/>
-                                    </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}"
-                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
-                                    </dt:ifNotEqual>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div>
-                            <dl>
-                                <dt>TOTAL NEXT DUE</dt>
-                                <dd>
-                                    <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcTotalNextDue" javaScriptSafe="1"/>
-                                    </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}"
-                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
-                                    </dt:ifNotEqual>
-                                <dt>PAST DUE</dt>
-                                <dd>
-                                    <dt:ifEqual first="${managedType}" second="<%=PatronEnum.ABCMANAGED.toString()%>">
-                                        <dt:value property="abcTotalDue" javaScriptSafe="1"/>
-                                    </dt:ifEqual>
-                                    <dt:ifNotEqual first="${managedType}"
-                                                   second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
-                                    </dt:ifNotEqual>
-                                </dd>
-                            </dl>
+                                        </dt:ifNotEqual>
+                                        </dt:childBean>
+                                        </dt:ifNotEqual>
+                                    </div>
+                                </div>
+                                <div class="data-card__item data-card_mt-16">
+                                    <div class="data-card__header">LATE FEE</div>
+                                    <div class="data-card__text">
+                                        <dt:ifEqual first="${managedType}"
+                                                    second="<%=PatronEnum.ABCMANAGED.toString()%>">
+                                            <dt:value property="abcLastFeeTotal" javaScriptSafe="1"/>
+                                        </dt:ifEqual>
+                                        <dt:ifNotEqual first="${managedType}"
+                                                       second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                        </dt:ifNotEqual>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data-card__col-right">
+                                <div class="data-card__item">
+                                    <div class="data-card__header">TOTAL NEXT DUE</div>
+                                    <div class="data-card__text">
+                                        <dt:ifEqual first="${managedType}"
+                                                    second="<%=PatronEnum.ABCMANAGED.toString()%>">
+                                            <dt:value property="abcTotalNextDue" javaScriptSafe="1"/>
+                                        </dt:ifEqual>
+                                        <dt:ifNotEqual first="${managedType}"
+                                                       second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                        </dt:ifNotEqual>
+                                    </div>
+                                </div>
+                                <div class="data-card__item data-card_mt-16">
+                                    <div class="data-card__header">PAST DUE</div>
+                                    <div class="data-card__text">
+                                        <dt:ifEqual first="${managedType}"
+                                                    second="<%=PatronEnum.ABCMANAGED.toString()%>">
+                                            <dt:value property="abcTotalDue" javaScriptSafe="1"/>
+                                        </dt:ifEqual>
+                                        <dt:ifNotEqual first="${managedType}"
+                                                       second="<%=PatronEnum.ABCMANAGED.toString()%>">$0.00
+                                        </dt:ifNotEqual>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a class="link-primary font-weight-bold text-decoration-none action" href="#"
                        onclick="gotoPage('Invoices');">VIEW INVOICES</a>
                 </div>
             </div>
-            <div class="section member-grid__card card agreement">
+            <div class="section member-grid__card card agreement member-grid_fixed-card-height">
                 <div class="card-body">
                     <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                         <h4 class="navbar-title">Agreement</h4>
                         <button class="btn chevron primary-color-bg" onclick="gotoPage('Agreement');"></button>
                     </nav>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <dl>
-                                <dt>AGREEMENT #</dt>
-                                <dd>
-                                    <dt:value property="agreementNumber" javaScriptSafe="1"/>
-                                </dd>
-                                <dt>PAY FREQUENCY</dt>
-                                <dd>
-                                    <dt:value property="paymentFrequency" javaScriptSafe="0"/>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-md-6">
-                            <dl>
-                                <dt>TERM</dt>
-                                <dd>
-                                    <dt:value property="agreementTerm" javaScriptSafe="1"/>
-                                </dd>
-                            </dl>
+                    <div class="data-card">
+                        <div class="data-card__row">
+                            <div class="data-card__col-left">
+                                <div class="data-card__item">
+                                    <div class="data-card__header">AGREEMENT #</div>
+                                    <div class="data-card__text">
+                                        <dt:value property="agreementNumber" javaScriptSafe="1"/>
+                                    </div>
+                                </div>
+                                <div class="data-card__item data-card_mt-16">
+                                    <div class="data-card__header">PAY FREQUENCY</div>
+                                    <div class="data-card__text">
+                                        <dt:value property="paymentFrequency" javaScriptSafe="0"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data-card__col-right">
+                                <div class="data-card__item">
+                                    <div class="data-card__header">TERM</div>
+                                    <div class="data-card__text">
+                                        <dt:value property="agreementTerm" javaScriptSafe="1"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a class="link-primary font-weight-bold text-decoration-none action" onclick="gotoPage('Documents')"
@@ -316,9 +332,9 @@
                 </div>
             </div>
         </div>
-        <div class="section member-grid__card card quicknotes member-grid_mr-12">
+        <div class="section member-grid__card card quicknotes member-grid_fixed-card-height">
             <div class="card-body">
-                <nav class="navbar navbar-expand-lg bg-white">
+                <nav class="navbar navbar-expand-lg bg-white quicknotes__header">
                     <h4 class="navbar-title">Quick Links</h4>
                 </nav>
                 <ul class="list-unstyled">
@@ -340,18 +356,19 @@
                 </ul>
             </div>
         </div>
-        <div class="section member-grid__card card timeline member-grid_mr-12">
-            <div class="card-body">
+        <div class="section member-grid__card card timeline">
+            <div class="member-grid__card-header">
                 <nav class="navbar navbar-expand-lg bg-white" style="justify-content: space-between;">
                     <h4 class="navbar-title">Timeline</h4>
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link timeline-nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            <a class="nav-link timeline-nav-link dropdown-toggle no-padding" href="#"
+                               id="navbarDropdownMenuLink"
                                role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Past 30 Days
                             </a>
-                            <div class="scrollbar-macosx inner-list">
+                            <div class="inner-list">
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="#">Today</a>
                                     <a class="dropdown-item" href="#">Yesterday</a>
@@ -364,6 +381,8 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+            <div class="scrollbar-macosx member-grid__card-content scrollable-height">
                 <dl>
                     <dt>4/25/20</dt>
                     <dd>Cliff Bar</dd>
@@ -378,55 +397,35 @@
                     <dt>4/25/20</dt>
                     <dd><a class="link-primary" href="#">Checked In</a></dd>
                 </dl>
-                <!--div class="no-data-facet">There has been no activity for the last 30 days.</div-->
             </div>
+            <!--div class="no-data-facet">There has been no activity for the last 30 days.</div-->
         </div>
-        <div class="section member-grid__card card purchase member-grid_ml-12">
+        <div class="section member-grid__card card purchase member-grid_fixed-card-height">
             <div class="card-body">
                 <nav class="navbar navbar-expand-lg navbar-light bg-white" style="justify-content: space-between;">
                     <h4 class="navbar-title">Purchase Items</h4>
                     <button class="btn chevron primary-color-bg"></button>
                 </nav>
-                <div class="row cards-panel purchase-items">
-                    <div>
-                        <div class="card p-item">
-                            <div class="card-body">
-                                <div class="icon-wrap"><img src="/images/bootstrap/test_img_1.png"></div>
-                                <a class="link-primary" href="#">Tanning Lotion</a>
-                            </div>
-                        </div>
+                <div class="purchase__body">
+                    <div class="purchase__item">
+                        <div class="icon-wrap"><img src="/images/bootstrap/test_img_1.png"></div>
+                        <a class="purchase__link link-primary" href="#">Tanning Lotion</a>
                     </div>
-                    <div>
-                        <div class="card p-item">
-                            <div class="card-body">
-                                <div class="icon-wrap"><img src="/images/clubhome/pf_water_bottle.png"></div>
-                                <a class="link-primary" href="#">Bottled Water</a>
-                            </div>
-                        </div>
+                    <div class="purchase__item">
+                        <div class="icon-wrap"><img src="/images/clubhome/pf_water_bottle.png"></div>
+                        <a class="purchase__link link-primary" href="#">Bottled Water</a>
                     </div>
-                    <div>
-                        <div class="card p-item">
-                            <div class="card-body">
-                                <div class="icon-wrap"><img src="/images/bootstrap/test_img_4.png"></div>
-                                <a class="link-primary" href="#">Muscle Milk</a>
-                            </div>
-                        </div>
+                    <div class="purchase__item">
+                        <div class="icon-wrap"><img src="/images/bootstrap/test_img_4.png"></div>
+                        <a class="purchase__link link-primary" href="#">Muscle Milk</a>
                     </div>
-                    <div>
-                        <div class="card p-item">
-                            <div class="card-body">
-                                <div class="icon-wrap"><img src="/images/bootstrap/test_img_3.png"></div>
-                                <a class="link-primary" href="#">T-Shirt</a>
-                            </div>
-                        </div>
+                    <div class="purchase__item">
+                        <div class="icon-wrap"><img src="/images/bootstrap/test_img_3.png"></div>
+                        <a class="purchase__link link-primary" href="#">T-Shirt</a>
                     </div>
-                    <div>
-                        <div class="card p-item">
-                            <div class="card-body">
-                                <div class="icon-wrap"><img src="/images/bootstrap/test_img_5.png"></div>
-                                <a class="link-primary" href="#">Gift Card</a>
-                            </div>
-                        </div>
+                    <div class="purchase__item">
+                        <div class="icon-wrap"><img src="/images/bootstrap/test_img_5.png"></div>
+                        <a class="purchase__link link-primary" href="#">Gift Card</a>
                     </div>
                 </div>
             </div>

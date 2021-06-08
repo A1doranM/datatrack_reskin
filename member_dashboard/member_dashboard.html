@@ -1,0 +1,462 @@
+<div class="container-fluid h-100 bg-light member-page personal-details dashboard">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb dashboard__breadcrumb">
+            <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+            <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Elscribbles  HUNT Do Not Update</a></li>
+            <li class="breadcrumb-item active">Details</li>
+        </ol>
+    </nav>
+
+    <div class="row no-margins">
+        <div class="col-md-12 no-padding">
+            <div class="section member-info">
+                <div class="row no-margins">
+                    <div class="col-xl-2 col-lg-2 no-padding_left">
+                        <div class="user-image-wrap">
+                            <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';" src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-10 no-padding_right">
+                        <h3 class="card-title">Elscribbles  HUNT Do Not Update</h3>
+                        <div class="row no-margins">
+                            <dl class="col col-lg-3 no-padding_left">
+                                <dt>Membership Type</dt>
+                                <dd>
+
+
+                                    <a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a></dd>
+
+                            </dl>
+                            <dl class="col col-lg-3">
+                                <dt>Membership Status</dt>
+                                <dd>Active</dd>
+                            </dl>
+                            <dl class="col col-lg-6 no-padding_right">
+                                <dt>Barcode</dt>
+                                <dd><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function editMembershipType()
+                {
+                    var isPersonalUpdate = false;
+                    updateMemberMembershipType( 'ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function() { wizardRefreshForm(); } );
+                }
+                function changeBarcode()
+                {
+                    changeMemberBarcode( 'ea61d8ec3b134d15abada6b0add4ae50',
+                        function( barcode )
+                        {
+                            if ( barcode )
+                            {
+                                setInnerHtmlById( 'barcodeContainer', barcode );
+                                $('.member-barcode').html(barcode);
+                            }
+                        } );
+                }
+
+            </script>
+        </div>
+    </div>
+    <div class="row no-margins">
+        <div class="col-xl-2 col-lg-2 d-flex flex-column no-padding">
+            <div class="section member-navigation">
+                <div class="nav flex-column" aria-orientation="vertical">
+
+
+
+
+
+
+                    <a class="nav-link active " href="#" onclick="wizardChangeTab(2)">
+                        Personal
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+                        Agreement
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+                        Services
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
+                        Billing
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
+                        Notes
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
+                        Invoices
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+                        Events
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
+                        Member Alerts
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+                        Activities
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+                        Check In History
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+                        Custom
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+                        User Defined Fields
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+                        Documents
+                    </a>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xl-10 col-lg-10 d-flex flex-column member-personal-details no-padding_right">
+            <div class="row no-margins">
+                <div class="col-xl-6 col-lg-6 section-container no-padding_left">
+                    <div class="section personal-details-section personal-details card">
+                        <div class="card-body">
+                            <div class="section-header">
+                                <h4 class="navbar-title">Personal Details
+                                    <a class="link-primary" href="#" onclick="editPersonalDetails();" style="">Edit Details</a>
+                                </h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col">Name</dt>
+                                <dd class="col">Elscribbles  HUNT Do Not Update</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Gender</dt>
+                                <dd class="col">Male</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Date of Birth</dt>
+                                <dd class="col">06/09/1988</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Social Security #</dt>
+                                <dd class="col">XXXXX4321</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Occupation</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Employer</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <div class="section-header internal-header">
+                                <h4 class="navbar-title">Membership Details
+                                    <a class="link-primary" href="#" onclick="editMembershipDetails();" style="">Edit Membership</a>
+                                </h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col" style="min-width: 76px">Barcode</dt>
+                                <dd class="col member-barcode" style="padding-left: 0">JERM</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Previous Agreement #</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Wellness Program ID</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Membership Type</dt>
+
+
+                                <dd class="col">
+                                    <a class="link-primary" href="#" onclick="editMembershipType();" style="">GLBFIT</a>
+                                </dd>
+
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Group</dt>
+                                <dd class="col">None</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Member Misc 1</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Member Misc 2</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Member Misc 3</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 section-container no-padding_right">
+                    <div class="section personal-details-section demographics card">
+                        <div class="card-body">
+                            <div class="section-header">
+                                <h4 class="navbar-title">Demographics
+                                    <a class="link-primary" href="#" onclick="editContact();" style="">Edit</a>
+                                </h4>
+                            </div>
+
+                            <dl class="row">
+                                <dt class="col">Street</dt>
+                                <dd class="col"></dd>
+                            </dl>
+
+
+                            <dl class="row">
+                                <dt class="col">City</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">State</dt>
+                                <dd class="col">Arkansas</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Zip Code</dt>
+                                <dd class="col"></dd>
+                            </dl>
+
+                            <dl class="row">
+                                <dt class="col">Country</dt>
+                                <dd class="col">United States</dd>
+                            </dl>
+
+                            <dl class="row">
+                                <dt class="col">Email Address</dt>
+                                <dd class="col">
+
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Driver's License</dt>
+                                <dd class="col">ASDFASDFASDFASDF</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Primary Phone</dt>
+                                <dd class="col">(501) 993-5300</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Mobile Phone</dt>
+                                <dd class="col">(501) 993-5300</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Work Phone</dt>
+                                <dd class="col phone-number-container">
+                                    <span class="phone-number">(000) 000-0000</span>
+                                    <span>ext.</span>
+                                    <span class="phone-extension">0000</span>
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Fax Number</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Member Availability</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Emergency Phone</dt>
+                                <dd class="col phone-number-container">
+                                    <span class="phone-number">(501) 993-5301</span>
+                                    <span>ext.</span>
+                                    <span class="phone-extension">0000</span>
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Emergency Contact</dt>
+                                <dd class="col">Nope  </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Emergency Availability</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-margins">
+                <div class="col-xl-6 col-lg-6 section-container">
+                    <div class="section personal-details-section messaging-marketing card">
+                        <div class="card-body">
+                            <div class="section-header">
+                                <h4 class="navbar-title">Messaging
+                                    <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                </h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col">Receive Emails</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Email Address</dt>
+                                <dd class="col"></dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Receive Text</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Text Number</dt>
+                                <dd class="col">(501) 993-5300</dd>
+                            </dl>
+                            <div class="section-header internal-header">
+                                <h4 class="navbar-title">Marketing
+                                    <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                </h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col">Receive Emails</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Receive SMS</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Receive Direct Mail</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Receive Push Notifications</dt>
+                                <dd class="col">Yes</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 section-container no-padding_right">
+                    <div class="section personal-details-section access-code-data-preferences card">
+                        <div class="card-body">
+                            <div class="section-header">
+                                <h4 class="navbar-title">Access Code
+                                    <a class="link-primary" href="#" onclick="editAccessCode();">Edit</a>
+                                </h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col">Access Code</dt>
+                                <dd class="col">
+
+                                    ****
+
+
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Failed Attempts</dt>
+                                <dd class="col">0</dd>
+                            </dl>
+                            <div class="section-header internal-header">
+                                <h4 class="navbar-title">Data Preferences</h4>
+                            </div>
+                            <dl class="row">
+                                <dt class="col">Opt-Out CCPA</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Delete CCPA</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Opt-Out GDPR</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Delete GDPR</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Opt-Out Other</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col">Delete Other</dt>
+                                <dd class="col">No</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-margins">
+                <div class="col-xl-12 col-lg-12 section-container no-padding_right">
+                    <div class="section personal-details-section lockers-section card">
+                        <div class="card-body">
+                            <div class="section-header">
+                                <h4 class="navbar-title">Locker
+
+                                    <a class="link-primary" href="#" onclick="addLocker('ea61d8ec3b134d15abada6b0add4ae50');">Add</a>
+
+                                    <a class="link-primary" href="#" onclick="memberLockerHistory('ea61d8ec3b134d15abada6b0add4ae50');">History</a>
+                                </h4>
+                            </div>
+                            <table class="table data-header">
+                                <thead>
+                                <tr>
+                                    <th class="col-club-location">CLUB LOCATION</th>
+                                    <th class="col-locker-status">LOCKER STATUS</th>
+                                    <th class="col-number">NUMBER</th>
+                                    <th class="col-start-and-expiration">START &amp; EXPIRATION</th>
+                                    <th class="col-type">TYPE</th>
+                                    <th class="col-member">MEMBER</th>
+                                </tr>
+                                </thead>
+                            </table>
+                            <div class="bt-scroll">
+                                <div class="scroll-wrapper scrollbar-macosx" style="position: relative;"><div class="scrollbar-macosx scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
+                                    <table class="table data-table">
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 96px;"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

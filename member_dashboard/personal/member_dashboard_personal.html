@@ -3,17 +3,19 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb dashboard__breadcrumb">
             <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
-            <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Elscribbles  HUNT Do Not Update</a></li>
+            <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Elscribbles HUNT Do Not
+                Update</a></li>
             <li class="breadcrumb-item active">Details</li>
         </ol>
     </nav>
 
-    <div class="row no-margins">
-        <div class="col-md-12 no-padding">
-            <div class="section member-info">
-                <div class="user-image-wrap">
-                    <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';" src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="card-img">
-                </div><div class="member-info__info-wrapper"><h3 class="card-title">Elscribbles  HUNT Do Not Update</h3>
+    <div class="member-detail__header">
+        <div class="section member-info">
+            <div class="user-image-wrap">
+                <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
+                     src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="card-img">
+            </div>
+            <div class="member-info__info-wrapper"><h3 class="card-title">Elscribbles HUNT Do Not Update</h3>
                 <div class="member-info__info">
                     <dl class="member-info__type">
                         <dt>Membership Type</dt>
@@ -27,49 +29,43 @@
                     <dl class="member-info__status">
                         <dt>Membership Status</dt>
                         <dd>Active</dd>
-                    </dl><dl class="member-info__barcode">
-                    <dt>Barcode</dt>
-                    <dd><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
-                </dl>
+                    </dl>
+                    <dl class="member-info__barcode">
+                        <dt>Barcode</dt>
+                        <dd><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a>
+                        </dd>
+                    </dl>
                 </div>
             </div>
-            </div>
-            <script>
-                function editMembershipType()
-                {
-                    var isPersonalUpdate = false;
-                    updateMemberMembershipType( 'ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function() { wizardRefreshForm(); } );
-                }
-                function changeBarcode()
-                {
-                    changeMemberBarcode( 'ea61d8ec3b134d15abada6b0add4ae50',
-                        function( barcode )
-                        {
-                            if ( barcode )
-                            {
-                                setInnerHtmlById( 'barcodeContainer', barcode );
-                                $('.member-barcode').html(barcode);
-                            }
-                        } );
-                }
-
-            </script>
         </div>
+        <script>
+            function editMembershipType() {
+                var isPersonalUpdate = false;
+                updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+                    wizardRefreshForm();
+                });
+            }
+
+            function changeBarcode() {
+                changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+                    function (barcode) {
+                        if (barcode) {
+                            setInnerHtmlById('barcodeContainer', barcode);
+                            $('.member-barcode').html(barcode);
+                        }
+                    });
+            }
+
+        </script>
     </div>
+
     <div class="row no-margins">
         <div class="col-xl-2 col-lg-2 d-flex flex-column no-padding">
             <div class="section member-navigation">
                 <div class="nav flex-column" aria-orientation="vertical">
-
-
-
-
-
-
                     <a class="nav-link active " href="#" onclick="wizardChangeTab(2)">
                         Personal
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
@@ -77,11 +73,9 @@
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
                         Services
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
@@ -89,11 +83,9 @@
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
                         Notes
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
@@ -101,11 +93,9 @@
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
                         Events
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
@@ -113,11 +103,9 @@
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
                         Activities
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
@@ -125,17 +113,14 @@
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
                         Custom
                     </a>
 
 
-
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
                         User Defined Fields
                     </a>
-
 
 
                     <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
@@ -154,12 +139,13 @@
                         <div class="card-body">
                             <div class="section-header">
                                 <h4 class="navbar-title">Personal Details
-                                    <a class="link-primary" href="#" onclick="editPersonalDetails();" style="">Edit Details</a>
+                                    <a class="link-primary" href="#" onclick="editPersonalDetails();" style="">Edit
+                                        Details</a>
                                 </h4>
                             </div>
                             <dl class="row">
                                 <dt class="col">Name</dt>
-                                <dd class="col">Elscribbles  HUNT Do Not Update</dd>
+                                <dd class="col">Elscribbles HUNT Do Not Update</dd>
                             </dl>
                             <dl class="row">
                                 <dt class="col">Gender</dt>
@@ -183,7 +169,8 @@
                             </dl>
                             <div class="section-header internal-header">
                                 <h4 class="navbar-title">Membership Details
-                                    <a class="link-primary" href="#" onclick="editMembershipDetails();" style="">Edit Membership</a>
+                                    <a class="link-primary" href="#" onclick="editMembershipDetails();" style="">Edit
+                                        Membership</a>
                                 </h4>
                             </div>
                             <dl class="row">
@@ -303,7 +290,7 @@
                             </dl>
                             <dl class="row">
                                 <dt class="col">Emergency Contact</dt>
-                                <dd class="col">Nope  </dd>
+                                <dd class="col">Nope</dd>
                             </dl>
                             <dl class="row">
                                 <dt class="col">Emergency Availability</dt>
@@ -319,7 +306,8 @@
                         <div class="card-body">
                             <div class="section-header">
                                 <h4 class="navbar-title">Messaging
-                                    <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                    <a class="link-primary" href="#" onclick="editMessagePreferences();"
+                                       style="">Edit</a>
                                 </h4>
                             </div>
                             <dl class="row">
@@ -340,7 +328,8 @@
                             </dl>
                             <div class="section-header internal-header">
                                 <h4 class="navbar-title">Marketing
-                                    <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                    <a class="link-primary" href="#" onclick="editMessagePreferences();"
+                                       style="">Edit</a>
                                 </h4>
                             </div>
                             <dl class="row">
@@ -421,9 +410,11 @@
                             <div class="section-header">
                                 <h4 class="navbar-title">Locker
 
-                                    <a class="link-primary" href="#" onclick="addLocker('ea61d8ec3b134d15abada6b0add4ae50');">Add</a>
+                                    <a class="link-primary" href="#"
+                                       onclick="addLocker('ea61d8ec3b134d15abada6b0add4ae50');">Add</a>
 
-                                    <a class="link-primary" href="#" onclick="memberLockerHistory('ea61d8ec3b134d15abada6b0add4ae50');">History</a>
+                                    <a class="link-primary" href="#"
+                                       onclick="memberLockerHistory('ea61d8ec3b134d15abada6b0add4ae50');">History</a>
                                 </h4>
                             </div>
                             <table class="table data-header">
@@ -439,13 +430,30 @@
                                 </thead>
                             </table>
                             <div class="bt-scroll">
-                                <div class="scroll-wrapper scrollbar-macosx" style="position: relative;"><div class="scrollbar-macosx scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
-                                    <table class="table data-table">
-                                        <tbody>
+                                <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                                    <div class="scrollbar-macosx scroll-content"
+                                         style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
+                                        <table class="table data-table">
+                                            <tbody>
 
-                                        </tbody>
-                                    </table>
-                                </div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 96px;"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar"></div></div></div></div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="scroll-element scroll-x">
+                                        <div class="scroll-element_outer">
+                                            <div class="scroll-element_size"></div>
+                                            <div class="scroll-element_track"></div>
+                                            <div class="scroll-bar" style="width: 96px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="scroll-element scroll-y">
+                                        <div class="scroll-element_outer">
+                                            <div class="scroll-element_size"></div>
+                                            <div class="scroll-element_track"></div>
+                                            <div class="scroll-bar"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

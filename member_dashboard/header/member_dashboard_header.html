@@ -1,0 +1,51 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+        <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate Dr</a></li>
+        <li class="breadcrumb-item active">Details</li>
+    </ol>
+</nav>
+
+<div class="section member-detail__header">
+    <div class="member-detail__image-wrapper">
+        <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
+             src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="">
+    </div>
+    <div class="member-detail__info-wrapper">
+        <h3 class="card-title">Elscribbles HUNT Do Not Update</h3>
+        <div class="member-detail__info">
+            <dl class="member-info__type">
+                <dt class="member-detail__info-title">Membership Type</dt>
+                <dd class="member-detail__info-text"><a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a></dd>
+            </dl>
+
+            <dl class="member-info__status">
+                <dt class="member-detail__info-title">Membership Status</dt>
+                <dd class="member-detail__info-text">Active</dd>
+            </dl>
+            <dl class="member-info__barcode">
+                <dt class="member-detail__info-title">Barcode</dt>
+                <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+<script>
+    function editMembershipType() {
+        var isPersonalUpdate = false;
+        updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+            wizardRefreshForm();
+        });
+    }
+
+    function changeBarcode() {
+        changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+            function (barcode) {
+                if (barcode) {
+                    setInnerHtmlById('barcodeContainer', barcode);
+                    $('.member-barcode').html(barcode);
+                }
+            });
+    }
+
+</script>

@@ -1,0 +1,1263 @@
+<div class="container-fluid h-100 bg-light member-page personal-details billing-details">
+  <div class="inner-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+        <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate  Dr</a></li>
+        <li class="breadcrumb-item active">Details</li>
+      </ol>
+    </nav>
+
+    <div class="member-detail__header">
+      <div class="section member-info">
+        <div class="user-image-wrap">
+          <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';" src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="card-img">
+        </div><div class="member-info__info-wrapper"><h3 class="card-title">Elscribbles  HUNT Do Not Update</h3>
+        <div class="member-info__info">
+          <dl class="member-info__type">
+            <dt>Membership Type</dt>
+            <dd>
+
+
+              <a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a></dd>
+
+          </dl>
+
+          <dl class="member-info__status">
+            <dt>Membership Status</dt>
+            <dd>Active</dd>
+          </dl><dl class="member-info__barcode">
+          <dt>Barcode</dt>
+          <dd><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
+        </dl>
+        </div>
+      </div>
+      </div><script>
+      function editMembershipType()
+      {
+        var isPersonalUpdate = false;
+        updateMemberMembershipType( 'ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function() { wizardRefreshForm(); } );
+      }
+      function changeBarcode()
+      {
+        changeMemberBarcode( 'ea61d8ec3b134d15abada6b0add4ae50',
+                function( barcode )
+                {
+                  if ( barcode )
+                  {
+                    setInnerHtmlById( 'barcodeContainer', barcode );
+                    $('.member-barcode').html(barcode);
+                  }
+                } );
+      }
+
+    </script>
+    </div>
+
+    <div class="member-details__billing">
+      <div class="d-flex flex-column member-details__nav">
+        <div class="section member-navigation">
+          <div class="nav flex-column" aria-orientation="vertical">
+
+
+
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
+              Personal
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+              Agreement
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+              Services
+            </a>
+
+
+
+            <a class="nav-link active " href="#" onclick="wizardChangeTab(5)">
+              Billing
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
+              Notes
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
+              Invoices
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+              Events
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
+              Member Alerts
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+              Activities
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+              Check In History
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+              Custom
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+              User Defined Fields
+            </a>
+
+
+
+            <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+              Documents
+            </a>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="d-flex flex-column member-details__content">
+        <div class="section">
+          <div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="billingType" class="control-label">View</label>
+                  <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );" id="billingType" name="billingType" size="1" class="form-control" onchange="wizardRefreshForm()"><option value="detail" selected="selected">Member/Club</option><option value="summary">Summary</option></select>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="selectedMemberId" class="control-label">Member</label>
+                  <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );" id="selectedMemberId" name="selectedMemberId" size="1" class="form-control" onchange="refreshSelectedMember()"><option value="49923774ea594ec984ed5418c856ac03" selected="selected">Kate  Dr (Active)</option><option value="ba858a67c2104a1f8371df44955eec5b">Second  Dra (Active)</option></select>
+                </div>
+              </div>
+            </div>
+            <hr class="margin-bottom-0px">
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-xl-6 col-lg-6 section-container margin-top-0px">
+            <div class="section personal-details-section card">
+              <div class="card-body">
+                <div id="primaryAbcExpired" class="status w-100 display-none mb_8" style="color: rgb(97, 26, 21); background-color: rgb(253, 236, 234); border-color: rgba(97, 26, 21, 0.15);"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 8C0.5 12.1423 3.85775 15.5 8 15.5C12.1423 15.5 15.5 12.1423 15.5 8C15.5 3.85775 12.1423 0.5 8 0.5C3.85775 0.5 0.5 3.85775 0.5 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8.75 4.25V5.75H7.25V4.25H8.75ZM8.75 11.75V7.25H7.25V11.75H8.75Z" fill="#611A15"></path></svg>Card has expired. Please update primary ABC billing.</div>
+
+
+
+                <div class="section-header margin-top-20px">
+                  <h4 class="navbar-title">Primary ABC Billing
+
+
+                    <a class="link-primary" href="#" onclick="setAbcBillingPaymentOption()">Change Payment</a>
+
+
+                  </h4>
+                </div>
+                <dl class="row">
+                  <dt class="col">Payment Method</dt>
+                  <dd class="col">Credit Card</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Payment Option</dt>
+                  <dd class="col">Master Card</dd>
+                </dl>
+
+
+                <dl class="row">
+                  <dt class="col">Account Last Four</dt>
+                  <dd class="col">2793</dd>
+                </dl>
+
+
+              </div>
+            </div>
+
+            <div class="section personal-details-section card">
+              <div class="card-body">
+                <div id="alternateAbcExpired" class="status w-100 display-none" style="color: rgb(97, 26, 21); background-color: rgb(253, 236, 234); border-color: rgba(97, 26, 21, 0.15);"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 8C0.5 12.1423 3.85775 15.5 8 15.5C12.1423 15.5 15.5 12.1423 15.5 8C15.5 3.85775 12.1423 0.5 8 0.5C3.85775 0.5 0.5 3.85775 0.5 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8.75 4.25V5.75H7.25V4.25H8.75ZM8.75 11.75V7.25H7.25V11.75H8.75Z" fill="#611A15"></path></svg>Card has expired. Please update alternate ABC billing.</div>
+
+
+                <div class="section-header margin-top-20px">
+                  <h4 class="navbar-title">Alternate ABC Billing
+
+
+
+
+
+
+
+                  </h4>
+                </div>
+
+                <dl class="row">
+                  <dt class="col">Bill Member</dt>
+                  <dd class="col">No</dd>
+                </dl>
+
+                <dl class="row">
+                  <dt class="col">Payment Method</dt>
+                  <dd class="col">Credit Card</dd>
+                </dl>
+
+                <dl class="row">
+                  <dt class="col">Payment Option</dt>
+                  <dd class="col">Visa</dd>
+                </dl>
+
+                <dl class="row">
+                  <dt class="col">Account Last Four</dt>
+                  <dd class="col">6130</dd>
+                </dl>
+
+
+
+
+              </div>
+            </div>
+
+            <div class="section personal-details-section card">
+              <div class="card-body">
+                <div id="cardOnFileAbcExpired" class="status w-100 display-none" style="color: rgb(97, 26, 21); background-color: rgb(253, 236, 234); border-color: rgba(97, 26, 21, 0.15);"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 8C0.5 12.1423 3.85775 15.5 8 15.5C12.1423 15.5 15.5 12.1423 15.5 8C15.5 3.85775 12.1423 0.5 8 0.5C3.85775 0.5 0.5 3.85775 0.5 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8.75 4.25V5.75H7.25V4.25H8.75ZM8.75 11.75V7.25H7.25V11.75H8.75Z" fill="#611A15"></path></svg>Card has expired. Please update card on file.</div>
+
+
+
+                <div class="section-header margin-top-20px">
+                  <h4 class="navbar-title">Card on File
+                    <a class="link-primary" href="#" onclick="setCardOnFilePaymentOption()">Change Payment</a>
+                  </h4>
+                </div>
+                <dl class="row">
+                  <dt class="col">Card Assigned</dt>
+                  <dd class="col">Yes</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Payment Option</dt>
+                  <dd class="col">Master Card</dd>
+                </dl>
+
+
+                <dl class="row">
+                  <dt class="col">Account Last Four</dt>
+                  <dd class="col">2793</dd>
+                </dl>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 col-lg-6 section-container margin-top-0px">
+            <div class="section personal-details-section card">
+              <div class="card-body">
+                <div id="clubAccountAbcExpired" class="status w-100 display-none" style="color: rgb(97, 26, 21); background-color: rgb(253, 236, 234); border-color: rgba(97, 26, 21, 0.15);"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 8C0.5 12.1423 3.85775 15.5 8 15.5C12.1423 15.5 15.5 12.1423 15.5 8C15.5 3.85775 12.1423 0.5 8 0.5C3.85775 0.5 0.5 3.85775 0.5 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8.75 4.25V5.75H7.25V4.25H8.75ZM8.75 11.75V7.25H7.25V11.75H8.75Z" fill="#611A15"></path></svg>Card has expired. Please update club account.</div>
+
+
+
+                <div class="section-header margin-top-20px">
+                  <h4 class="navbar-title">Club Account
+                    <a class="link-primary" href="#" onclick="launchEditClubAccountDialog()">Edit</a>
+                  </h4>
+                </div>
+
+                <dl class="row">
+                  <dt class="col">Allow club charge Privilege</dt>
+                  <dd class="col">Yes</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Payment Method</dt>
+                  <dd class="col">Credit Card</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Payment Option</dt>
+                  <dd class="col">Master Card</dd>
+                </dl>
+
+
+                <dl class="row">
+                  <dt class="col">Account Last Four</dt>
+                  <dd class="col">2793</dd>
+                </dl>
+
+
+                <dl class="row">
+                  <dt class="col">Bill via ABC</dt>
+                  <dd class="col">Yes</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Credit Limit</dt>
+                  <dd class="col">$1,000.00</dd>
+                </dl>
+
+                <a class="link-primary" href="#" onclick="resetClubAccount()">Reset Recurring Services</a>
+
+                <div class="section-header padding-top-15px">
+                  <h4 class="navbar-title">Membership information
+                  </h4>
+                </div>
+
+                <dl class="row">
+                  <dt class="col">Agreement Term</dt>
+                  <dd class="col">Installment</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">First Due Date</dt>
+                  <dd class="col">03/02/2021</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Last Billing Date</dt>
+                  <dd class="col">N/A</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Total Sale Price</dt>
+                  <dd class="col">$0.00</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Payment Frequency</dt>
+                  <dd class="col">Monthly</dd>
+                </dl>
+                <dl class="row">
+                  <dt class="col">Last Alternate Payment Date</dt>
+                  <dd class="col">N/A</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-right">
+          <button type="button" class="btn primary-color-bg action-button" onclick="addPaymentOption(); return false;">Add New Payment</button>
+        </div>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 section-container">
+
+
+            <div class="bt-scroll">
+              <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                <div class="scroll-wrapper scrollbar-macosx scroll-content" style="position: relative;"><div class="scrollbar-macosx scroll-content scroll-scrolly_visible" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 500px;">
+                  <table class="table data-table data-header" id="abc-billing-table">                                <thead>
+                  <tr>
+                    <th class="col-billing-document"></th>
+                    <th class="col-billing-payment-option sortable">PAYMENT OPTIONS<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-last-four sortable">LAST FOUR<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-usage sortable">USAGE<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-payment-method sortable">PAYMENT METHOD<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-name sortable">NAME<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-exp sortable">EXP<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-last-update sortable">LAST UPDATE<i class="bi bi-chevron-down pl-1"></i></th>
+                    <th class="col-billing-delete"></th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                    <tbody>
+                    <tr style="display: none" class="no-data-facet">
+                      <td>No payment options</td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('f01635e17d024870984c2cae99dfd5b4',null,null)">Master Card</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        2793
+                      </td>
+                      <td class="col-billing-usage">
+                        Primary ABC<br>Card on File<br>Club Account
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        05/2032
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/23/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('f01635e17d024870984c2cae99dfd5b4')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('396853faa33b46b48d1d9ebdc5466d79',null,null)">American Express</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        4801
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        06/2027
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        04/16/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('396853faa33b46b48d1d9ebdc5466d79')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('54fe8eff62384abc9650431f42a88f6f',null,null)">American Express</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1352
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        04/2026
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('54fe8eff62384abc9650431f42a88f6f')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('af222ff60a684b5e88ba3c725df88028',null,null)">American Express</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1352
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        02/2024
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('af222ff60a684b5e88ba3c725df88028')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('0da312442c134b1a84d196d85628a017',null,null)">Discover</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        4536
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        02/2025
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('0da312442c134b1a84d196d85628a017')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('b059070e60e047ecbd8e07713920594d',null,null)">Discover</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        4820
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        2Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        03/2024
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        04/28/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('b059070e60e047ecbd8e07713920594d')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('b5dcfd47dddf44e8bac6d86e08bfd2b0',null,null)">JPMORGAN CHASE BANK</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        K Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('b5dcfd47dddf44e8bac6d86e08bfd2b0')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('8a13d939fcd7412da308c45acebce3d9',null,null)">JPMORGAN CHASE BANK</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        K D
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/19/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('8a13d939fcd7412da308c45acebce3d9')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('1101cae446644f62a554832728dede45',null,null)">Master Card</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        8254
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate1 Dr1
+                      </td>
+                      <td class="col-billing-exp">
+                        10/2040
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('1101cae446644f62a554832728dede45')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('90fc61dfb99345f3be2d8f121927f77c',null,null)">REGIONS BANK</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        123
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/19/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('90fc61dfb99345f3be2d8f121927f77c')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('6329161a25904e18b8ef5a997a9178a9',null,null)">REGIONS BANK</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        6789
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('6329161a25904e18b8ef5a997a9178a9')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('88e7900907d94f009907ff812d766ddc',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        123
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/21/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('88e7900907d94f009907ff812d766ddc')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('5a7c9928177441318d187da116be2b09',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('5a7c9928177441318d187da116be2b09')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('8681632695ad4997a55aa2d6c18aa308',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('8681632695ad4997a55aa2d6c18aa308')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('816944ab18e4434eb7cc3ed6e52df616',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('816944ab18e4434eb7cc3ed6e52df616')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('57fd1adedd9947c98a30886abe97a49c',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('57fd1adedd9947c98a30886abe97a49c')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('f1d1954c13ec4516803ed7143aacb527',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/21/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('f1d1954c13ec4516803ed7143aacb527')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('e61fd7c24f8e4f889c2b22c1d393f3b4',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('e61fd7c24f8e4f889c2b22c1d393f3b4')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('dbb560cf4a31462cac46ead4da6b6686',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/21/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('dbb560cf4a31462cac46ead4da6b6686')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('9afda45ce8474d278bf34c25d694a87e',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('9afda45ce8474d278bf34c25d694a87e')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('5b80c1900ae4496c9cdc8c80b70cfca8',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('5b80c1900ae4496c9cdc8c80b70cfca8')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('46d2fe49c384439a813d5351a51e3bd4',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        123
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/21/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('46d2fe49c384439a813d5351a51e3bd4')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('3fdd296295da4ff9b4f39f829ab8cb48',null,null)">U.S. BANK NATIONAL ASSOCIATION</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        EFT
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/20/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('3fdd296295da4ff9b4f39f829ab8cb48')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('e7fa7dee47334692bdfdf53db76f4257',null,null)">Visa</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        6130
+                      </td>
+                      <td class="col-billing-usage">
+                        Alternate ABC
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        04/2029
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        02/02/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('e7fa7dee47334692bdfdf53db76f4257')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('e301babc562a4fe1894485279d82910b',null,null)">Visa</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        0833
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        01/2028
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/18/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('e301babc562a4fe1894485279d82910b')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('b10b83e51f0c4c27808901b904927179',null,null)">Visa</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        7475
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        03/2029
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        02/02/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('b10b83e51f0c4c27808901b904927179')">Delete</a>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td class="col-billing-document">
+
+
+                      </td>
+                      <td class="col-billing-payment-option">
+                        <a class="link-primary-14px font-weight-bold" href="#" onclick="editPaymentOption('7899f238fc40492981d2790459817c65',null,null)">Visa</a>
+                      </td>
+                      <td class="col-billing-last-four">
+                        1111
+                      </td>
+                      <td class="col-billing-usage">
+
+                      </td>
+                      <td class="col-billing-payment-method">
+                        Credit Card
+                      </td>
+                      <td class="col-billing-name">
+                        Kate Dr
+                      </td>
+                      <td class="col-billing-exp">
+                        04/2027
+
+                      </td>
+                      <td class="col-billing-last-update">
+                        05/12/2021
+                      </td>
+                      <td class="col-billing-delete">
+                        <a class="link-primary" href="#" onclick="removePaymentOption('7899f238fc40492981d2790459817c65')">Delete</a>
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div><div class="scroll-element scroll-x scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 89px; left: 0px;"></div></div></div><div class="scroll-element scroll-y scroll-scrolly_visible"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 162px; top: 0px;"></div></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

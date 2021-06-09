@@ -1,0 +1,16 @@
+.member-details__billing {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 164px 16px max-content;
+  grid-template-columns: 164px 16px max-content;
+}
+.member-details__billing__nav {
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+.member-details__billing__content {
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+/*# sourceMappingURL=member_dashboard_billing.css.map */

@@ -12,7 +12,7 @@
              src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="">
     </div>
     <div class="member-detail__info-wrapper">
-        <h3 class="card-title">Elscribbles HUNT Do Not Update</h3>
+        <h3 class="member-detail__title">Elscribbles HUNT Do Not Update</h3>
         <div class="member-detail__info">
             <dl class="member-info__type">
                 <dt class="member-detail__info-title">Membership Type</dt>
@@ -29,23 +29,23 @@
             </dl>
         </div>
     </div>
-</div>
-<script>
-    function editMembershipType() {
-        var isPersonalUpdate = false;
-        updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
-            wizardRefreshForm();
-        });
-    }
-
-    function changeBarcode() {
-        changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
-            function (barcode) {
-                if (barcode) {
-                    setInnerHtmlById('barcodeContainer', barcode);
-                    $('.member-barcode').html(barcode);
-                }
+    <script>
+        function editMembershipType() {
+            var isPersonalUpdate = false;
+            updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+                wizardRefreshForm();
             });
-    }
+        }
 
-</script>
+        function changeBarcode() {
+            changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+                function (barcode) {
+                    if (barcode) {
+                        setInnerHtmlById('barcodeContainer', barcode);
+                        $('.member-barcode').html(barcode);
+                    }
+                });
+        }
+
+    </script>
+</div>

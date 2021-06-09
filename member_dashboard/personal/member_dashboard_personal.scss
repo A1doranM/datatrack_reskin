@@ -1,0 +1,52 @@
+.member-navigation {
+  margin: 0;
+}
+
+.member-detail__grid {
+  .&__personal-subgrid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 457px 16px 457px;
+    grid-template-columns: 457px 16px 457px;
+    -ms-grid-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content;
+    -ms-grid-rows: max-content 24px max-content 24px max-content;
+    grid-template-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content;
+    grid-template-rows: max-content 24px max-content 24px max-content;
+  }
+
+  &__personal-card {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+
+  &__demographics-card {
+    -ms-grid-column: 3;
+    grid-column: 3;
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+
+  &__messaging-card {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+
+  &__preferences-card {
+    -ms-grid-column: 3;
+    grid-column: 3;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+
+  &__lockers-card {
+    -ms-grid-row: 5;
+    grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / span 3;
+  }
+}

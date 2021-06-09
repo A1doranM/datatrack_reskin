@@ -17,7 +17,16 @@
 .breadcrumb {
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
   margin: 0;
+}
+
+.section {
+  margin: 0;
+}
+
+.personal-details .section-container {
+  padding: 0;
 }
 
 .member-detail {
@@ -26,6 +35,8 @@
     display: grid;
     -ms-grid-columns: 140px 40px max-content;
     grid-template-columns: 140px 40px max-content;
+    margin-bottom: 0;
+    margin-top: 24px;
   }
 
   &__image-wrapper {
@@ -37,6 +48,7 @@
     height: 140px;
     width: 140px;
     text-align: center;
+    border-radius: 8px;
   }
 
   &__image {
@@ -49,12 +61,23 @@
     -ms-grid-row: 1;
     grid-column: 3;
     grid-row: 1;
+    margin-top: 16px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #242128;
   }
 
   &__info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-top: 24px;
 
     & > * {
       margin-right: 40px;

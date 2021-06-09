@@ -1,0 +1,24 @@
+.inner-container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.member-navigation {
+  margin: 0;
+}
+
+.member-detail__grid {
+  display: grid;
+  grid-template-columns: 164px 16px max-content;
+  margin-top: 24px;
+
+  &__navigation {
+    -ms-grid-column: 1;
+    grid-column: 1;
+  }
+
+  &__content {
+    -ms-grid-column: 3;
+    grid-column: 3;
+  }
+}

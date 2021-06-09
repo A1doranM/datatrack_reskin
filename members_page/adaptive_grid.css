@@ -94,9 +94,8 @@
   display: grid;
   -ms-grid-columns: 328px 24px 328px 24px 328px;
   grid-template-columns: 328px 24px 328px 24px 328px;
-  -ms-grid-rows: 284px 284px 284px 284px;
-  grid-template-rows: 284px 284px 284px 284px;
-  margin-bottom: 60px;
+  -ms-grid-rows: 284px 284px 284px 284px 80px;
+  grid-template-rows: 284px 284px 284px 284px 80px;
   margin-top: 12px;
 }
 .member-grid__card-header {
@@ -350,8 +349,8 @@
   .member-grid {
     -ms-grid-columns: 328px 24px 328px;
     grid-template-columns: 328px 24px 328px;
-    -ms-grid-rows: 284px 284px 284px 284px 330px 284px;
-    grid-template-rows: 284px 284px 284px 284px 330px 284px;
+    -ms-grid-rows: 284px 284px 284px 284px 330px 284px 80px;
+    grid-template-rows: 284px 284px 284px 284px 330px 284px 80px;
   }
 
   .icon-link {

@@ -7,10 +7,14 @@
   margin: 0;
 }
 
-.member-detail__grid {
-  display: grid;
-  grid-template-columns: 164px 16px max-content;
-  margin-top: 24px;
+.member-detail {
+
+  &__grid{
+    display: grid;
+    -ms-grid-columns: 164px 16px max-content;
+    grid-template-columns: 164px 16px max-content;
+    margin-top: 24px;
+  }
 
   &__navigation {
     -ms-grid-column: 1;

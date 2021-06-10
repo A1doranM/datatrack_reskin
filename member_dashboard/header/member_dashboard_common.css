@@ -9,14 +9,15 @@
 
 .member-detail__grid {
   display: grid;
+  -ms-grid-columns: 164px 16px max-content;
   grid-template-columns: 164px 16px max-content;
   margin-top: 24px;
 }
-.member-detail__grid__navigation {
+.member-detail__navigation {
   -ms-grid-column: 1;
   grid-column: 1;
 }
-.member-detail__grid__content {
+.member-detail__content {
   -ms-grid-column: 3;
   grid-column: 3;
 }

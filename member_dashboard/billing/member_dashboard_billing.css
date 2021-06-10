@@ -1,16 +1,79 @@
-.member-details__billing {
+.billing-details .section {
+  margin: 0;
+}
+
+.member-billing__grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 164px 16px max-content;
-  grid-template-columns: 164px 16px max-content;
+  -ms-grid-columns: 424px 16px 424px;
+  grid-template-columns: 424px 16px 424px;
+  -ms-grid-rows: max-content 24px max-content 24px max-content 24px max-content 24px;
+  grid-template-rows: max-content 24px max-content 24px max-content 24px max-content 24px;
 }
-.member-details__billing__nav {
+.member-billing__first-row {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/span 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+.member-billing____dropdowns-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 22px;
+  padding-bottom: 15px;
+  border-top: 1px solid #CECED9;
+  border-bottom: 1px solid #CECED9;
+}
+.member-billing____dropdowns-wrapper:last-child {
+  margin-right: 0;
+}
+.member-billing__dropdowns-item {
+  margin-right: 15px;
+  margin-bottom: 0;
+  width: 240px;
+}
+.member-billing__subgrid {
   -ms-grid-column: 1;
   grid-column: 1;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content 24px max-content 24px max-content;
+  grid-template-rows: max-content 24px max-content 24px max-content;
 }
-.member-details__billing__content {
+.member-billing__subgrid-item-1 {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+.member-billing__subgrid-item-2 {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+.member-billing__subgrid-item-3 {
+  -ms-grid-row: 5;
+  grid-row: 5;
+}
+.member-billing__personal-details {
   -ms-grid-column: 3;
   grid-column: 3;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+.member-billing__button {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 5;
+  grid-row: 5;
+}
+.member-billing__table {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/span 3;
+  -ms-grid-row: 7;
+  grid-row: 7;
 }
 
 /*# sourceMappingURL=member_dashboard_billing.css.map */

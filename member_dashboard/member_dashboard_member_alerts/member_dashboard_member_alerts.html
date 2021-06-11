@@ -1,0 +1,360 @@
+<div class="container-fluid h-100 bg-light member-page alerts">
+    <div class="inner-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+                <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate Dr</a></li>
+                <li class="breadcrumb-item active">Details</li>
+            </ol>
+        </nav>
+
+        <div class="section member-detail__header">
+            <div class="member-detail__image-wrapper">
+                <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
+                     src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="member-detail__image">
+            </div>
+            <div class="member-detail__info-wrapper">
+                <h3 class="member-detail__title">Elscribbles HUNT Do Not Update</h3>
+                <div class="member-detail__info">
+                    <dl class="member-info__type">
+                        <dt class="member-detail__info-title">Membership Type</dt>
+                        <dd class="member-detail__info-text"><a class="link-primary" href="#"
+                                                                onclick="editMembershipType()">GLBFIT</a></dd>
+                    </dl>
+
+                    <dl class="member-info__status">
+                        <dt class="member-detail__info-title">Membership Status</dt>
+                        <dd class="member-detail__info-text">Active</dd>
+                    </dl>
+                    <dl class="member-info__barcode">
+                        <dt class="member-detail__info-title">Barcode</dt>
+                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#"
+                                                                onclick="changeBarcode()">JERM</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <script>
+                function editMembershipType() {
+                    var isPersonalUpdate = false;
+                    updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+                        wizardRefreshForm();
+                    });
+                }
+
+                function changeBarcode() {
+                    changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+                        function (barcode) {
+                            if (barcode) {
+                                setInnerHtmlById('barcodeContainer', barcode);
+                                $('.member-barcode').html(barcode);
+                            }
+                        });
+                }
+
+            </script>
+        </div>
+        <div class="member-detail__grid">
+            <div class="section member-navigation member-detail__navigation">
+                <div class="nav flex-column" aria-orientation="vertical">
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
+                        Personal
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+                        Agreement
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+                        Services
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
+                        Billing
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
+                        Notes
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
+                        Invoices
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+                        Events
+                    </a>
+
+
+                    <a class="nav-link active " href="#" onclick="wizardChangeTab(9)">
+                        Member Alerts
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+                        Activities
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+                        Check In History
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+                        Custom
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+                        User Defined Fields
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+                        Documents
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="member-detail__content">
+                <div class="member-alerts__grid">
+                    <div class="section member-invoices__first-row">
+                        <div class="member-detail__dropdowns-wrapper">
+                            <div class="form-group member-detail__dropdowns-item">
+                                <label for="selectedMemberId" class="control-label">Member</label>
+                                <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );"
+                                        id="selectedMemberId" name="selectedMemberId" size="1" class="form-control"
+                                        onchange="clearResults()">
+                                    <option value="ac2c15cb8d3c44f1b2d65e141dfca5fb" selected="selected">Roy J Jones
+                                        JSP3 (Active)
+                                    </option>
+                                    <option value="f770206ad2a04b888e1076d26b3b8f2d">Mike J Jones (Inactive)</option>
+                                    <option value="cc03dcb7c12943bca55278769fff329b">Ray J Jones (Inactive)</option>
+                                </select>
+                            </div>
+                            <div class="form-group member-detail__dropdowns-item">
+                                <label for="selectedStatus" class="control-label">Status</label>
+                                <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );"
+                                        id="selectedStatus" name="alertStatus" size="1" class="form-control"
+                                        onchange="clearResults()">
+                                    <option value="1" selected="selected">Active</option>
+                                    <option value="0">Inactive</option>
+                                </select>
+                            </div>
+                            <div class="form-group member-detail__dropdowns-item">
+                                <button class="btn blue-outline-button action-button" onclick="wizardRefreshForm()">
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-alerts__table">
+
+                        <table class="table data-header" id="abc-alerts-header">
+                            <thead>
+                            <tr>
+                                <th class="col-alerts-date">Message<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-alerts-time">Date &amp; Time<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-alerts-exp-time">Expiration<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th>Acknowledged<i class="bi bi-chevron-down pl-1"></i></th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="bt-scroll">
+                            <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
+                                <div class="scrollbar-macosx scroll-content scroll-scrolly_visible"
+                                     style="height: auto; margin-bottom: -17px; margin-right: -17px; max-height: 490px;">
+                                    <table class="table data-table cursor-pointer" id="abc-alerts">
+                                        <tbody>
+                                        <tr style="display: none"></tr>
+
+                                        <tr onclick="edit( &quot;930be4d4980a4785b54ca7cf0e1c9385&quot; );">
+                                            <td class="col-alerts-date">
+                                                31231
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/29/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;e293d10af5b540cf8029acccc0cccf59&quot; );">
+                                            <td class="col-alerts-date">
+                                                63412asd
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/29/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;a2c0ee37c27e49f7b3cd766e4f3b052b&quot; );">
+                                            <td class="col-alerts-date">
+                                                231231
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/29/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;239ee1c55f634b53a7f6f745cc1f9b93&quot; );">
+                                            <td class="col-alerts-date">
+                                                apa regression
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                06/09/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;0ceea35181104a63add0ef22f38805b7&quot; );">
+                                            <td class="col-alerts-date">
+                                                apa very long title fo
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/21/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;b8b3e27f58f547d0937b7d086535dd71&quot; );">
+                                            <td class="col-alerts-date">
+                                                dsfds23213
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/29/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;8b903426b489455288c7afd849523269&quot; );">
+                                            <td class="col-alerts-date">
+                                                Alert K
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/27/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;1dbe7319b86641d28938386c5e30ecc0&quot; );">
+                                            <td class="col-alerts-date">
+                                                Test exp
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/08/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+                                                04/15/2022
+                                            </td>
+                                            <td>
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;0c5264f849e0467c8df1da7714879890&quot; );">
+                                            <td class="col-alerts-date">
+                                                apa test
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/21/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+
+                                            </td>
+                                            <td>
+
+                                                <img src="/images/check_green.png">
+
+                                            </td>
+                                        </tr>
+
+                                        <tr onclick="edit( &quot;8d5e190bc60e449da92f0af03e4ac53e&quot; );">
+                                            <td class="col-alerts-date">
+                                                TEst
+                                            </td>
+                                            <td class="col-alerts-time">
+                                                04/08/2021
+                                            </td>
+                                            <td class="col-alerts-exp-time">
+                                                04/09/2021
+                                            </td>
+                                            <td>
+
+                                                <img src="/images/check_green.png">
+
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="scroll-element scroll-x scroll-scrolly_visible">
+                                    <div class="scroll-element_outer">
+                                        <div class="scroll-element_size"></div>
+                                        <div class="scroll-element_track"></div>
+                                        <div class="scroll-bar" style="width: 89px;"></div>
+                                    </div>
+                                </div>
+                                <div class="scroll-element scroll-y scroll-scrolly_visible">
+                                    <div class="scroll-element_outer">
+                                        <div class="scroll-element_size"></div>
+                                        <div class="scroll-element_track"></div>
+                                        <div class="scroll-bar" style="height: 452px; top: 0px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

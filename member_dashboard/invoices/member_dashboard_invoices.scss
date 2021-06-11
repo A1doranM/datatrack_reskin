@@ -1,0 +1,61 @@
+.member-invoices__grid {
+  -ms-grid-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content -webkit-max-content 24px;
+  -ms-grid-rows: max-content 24px max-content 24px max-content max-content 24px;
+  grid-template-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content -webkit-max-content 24px;
+  grid-template-rows: max-content 24px max-content 24px max-content max-content 24px;
+  display: -ms-grid;
+  display: grid;
+
+  &__first-row {
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+
+  &__subgrid {
+    -ms-grid-row: 3;
+    grid-row: 3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: minmax(424px, 1fr) 16px minmax(424px, 1fr);
+    grid-template-columns: minmax(424px, 1fr) 16px minmax(424px, 1fr);
+    -ms-grid-rows: -webkit-max-content -webkit-max-content;
+    -ms-grid-rows: max-content max-content;
+    grid-template-rows: -webkit-max-content -webkit-max-content;
+    grid-template-rows: max-content max-content;
+
+    &_left {
+      -ms-grid-column: 1;
+      grid-column: 1;
+      -ms-grid-row: 1;
+      grid-row: 1;
+      margin-bottom: 24px;
+    }
+
+    &_right {
+      -ms-grid-column: 3;
+      grid-column: 3;
+      -ms-grid-row: 1;
+      grid-row: 1;
+      margin-bottom: 24px;
+    }
+
+    &_warning {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 3;
+      grid-column: 1 / span 3;
+      -ms-grid-row: 2;
+      grid-row: 2;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    -ms-grid-row: 5;
+    grid-row: 5;
+  }
+
+  &__table {
+    -ms-grid-row: 6;
+    grid-row: 6;
+  }
+}

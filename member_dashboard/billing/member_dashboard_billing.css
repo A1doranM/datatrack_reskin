@@ -17,23 +17,6 @@
   -ms-grid-row: 1;
   grid-row: 1;
 }
-.member-billing____dropdowns-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 22px;
-  padding-bottom: 15px;
-  border-top: 1px solid #CECED9;
-  border-bottom: 1px solid #CECED9;
-}
-.member-billing____dropdowns-wrapper:last-child {
-  margin-right: 0;
-}
-.member-billing__dropdowns-item {
-  margin-right: 15px;
-  margin-bottom: 0;
-  width: 240px;
-}
 .member-billing__subgrid {
   -ms-grid-column: 1;
   grid-column: 1;

@@ -1,0 +1,201 @@
+<div class="container-fluid h-100 bg-light member-page notes">
+    <div class="inner-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+                <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate Dr</a></li>
+                <li class="breadcrumb-item active">Details</li>
+            </ol>
+        </nav>
+
+        <div class="section member-detail__header">
+            <div class="member-detail__image-wrapper">
+                <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';" src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="member-detail__image">
+            </div>
+            <div class="member-detail__info-wrapper">
+                <h3 class="member-detail__title">Elscribbles HUNT Do Not Update</h3>
+                <div class="member-detail__info">
+                    <dl class="member-info__type">
+                        <dt class="member-detail__info-title">Membership Type</dt>
+                        <dd class="member-detail__info-text"><a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a></dd>
+                    </dl>
+
+                    <dl class="member-info__status">
+                        <dt class="member-detail__info-title">Membership Status</dt>
+                        <dd class="member-detail__info-text">Active</dd>
+                    </dl>
+                    <dl class="member-info__barcode">
+                        <dt class="member-detail__info-title">Barcode</dt>
+                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <script>
+                function editMembershipType() {
+                    var isPersonalUpdate = false;
+                    updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+                        wizardRefreshForm();
+                    });
+                }
+
+                function changeBarcode() {
+                    changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+                        function (barcode) {
+                            if (barcode) {
+                                setInnerHtmlById('barcodeContainer', barcode);
+                                $('.member-barcode').html(barcode);
+                            }
+                        });
+                }
+
+            </script>
+        </div>
+        <div class="member-detail__grid">
+            <div class="section member-navigation member-detail__navigation">
+                <div class="nav flex-column" aria-orientation="vertical">
+
+
+
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
+                        Personal
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+                        Agreement
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+                        Services
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
+                        Billing
+                    </a>
+
+
+
+                    <a class="nav-link active " href="#" onclick="wizardChangeTab(6)">
+                        Notes
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
+                        Invoices
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+                        Events
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
+                        Member Alerts
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+                        Activities
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+                        Check In History
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+                        Custom
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+                        User Defined Fields
+                    </a>
+
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+                        Documents
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="section member-detail__content">
+                <div class="member-notes__grid">
+                    <div class="section member-notes__first-row">
+                        <div class="member-detail__dropdowns-wrapper">
+                            <div class="form-group member-detail__dropdowns-item">
+                                <label for="selectedMemberId" class="control-label">Member</label>
+                                <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );" id="selectedMemberId" name="selectedMemberId" size="1" class="form-control" onchange="refreshSelectedMember()">
+                                    <option value="9efe98449a8c46dba6fcbafbeaa6c46e" selected="selected">Weider JSP3
+                                        (Active)
+                                    </option>
+                                    <option value="5e5a6655d1364b36a7280f37ccb20c15">another ke (Active)</option>
+                                </select>
+                            </div>
+                            <div class="form-group member-detail__dropdowns-item">
+                                <label for="noteType" class="control-label">Note Type</label>
+                                <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );" id="noteType" name="noteType" size="1" class="form-control" onchange="wizardRefreshForm()">
+                                    <option value="DataTrak" selected="selected">DataTrak</option>
+                                    <option value="ABC">ABC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-right member-notes__button">
+                        <button type="button" class="btn primary-color-bg action-button" id="create-note">Add Note</button>
+                    </div>
+
+
+
+
+                    <div class="member-notes__table">
+                        <table class="table data-header" id="abc-notes-header">
+                            <thead>
+                            <tr>
+                                <th class="col-date sortable">DATE<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-time sortable">TIME<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-code sortable">CODE<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-text sortable">TEXT<i class="bi bi-chevron-down pl-1"></i></th>
+                                <th class="col-user sortable">USER<i class="bi bi-chevron-down pl-1"></i></th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="bt-scroll">
+                            <div class="scroll-wrapper scrollbar-macosx" style="position: relative;"><div class="scrollbar-macosx scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 49px;">
+                                <table class="table data-table" id="abc-notes">
+                                    <tbody>
+                                    <tr style="" class="no-data-facet">
+                                        <td>None found</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="width: 96px; left: 0px;"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar" style="height: 96px;"></div></div></div></div>
+                        </div></div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

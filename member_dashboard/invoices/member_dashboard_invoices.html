@@ -1,0 +1,792 @@
+<div class="container-fluid h-100 bg-light member-page personal-details invoice-details">
+    <div class="inner-container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
+                <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate Dr</a></li>
+                <li class="breadcrumb-item active">Details</li>
+            </ol>
+        </nav>
+        <div class="section member-detail__header">
+            <div class="member-detail__image-wrapper">
+                <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
+                     src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="member-detail__image">
+            </div>
+            <div class="member-detail__info-wrapper">
+                <h3 class="member-detail__title">Elscribbles HUNT Do Not Update</h3>
+                <div class="member-detail__info">
+                    <dl class="member-info__type">
+                        <dt class="member-detail__info-title">Membership Type</dt>
+                        <dd class="member-detail__info-text"><a class="link-primary" href="#"
+                                                                onclick="editMembershipType()">GLBFIT</a></dd>
+                    </dl>
+
+                    <dl class="member-info__status">
+                        <dt class="member-detail__info-title">Membership Status</dt>
+                        <dd class="member-detail__info-text">Active</dd>
+                    </dl>
+                    <dl class="member-info__barcode">
+                        <dt class="member-detail__info-title">Barcode</dt>
+                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#"
+                                                                onclick="changeBarcode()">JERM</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <script>
+                function editMembershipType() {
+                    var isPersonalUpdate = false;
+                    updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
+                        wizardRefreshForm();
+                    });
+                }
+
+                function changeBarcode() {
+                    changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
+                        function (barcode) {
+                            if (barcode) {
+                                setInnerHtmlById('barcodeContainer', barcode);
+                                $('.member-barcode').html(barcode);
+                            }
+                        });
+                }
+
+            </script>
+        </div>
+        <div class="member-detail__grid">
+            <div class="section member-navigation member-detail__navigation">
+                <div class="nav flex-column" aria-orientation="vertical">
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
+                        Personal
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+                        Agreement
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+                        Services
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
+                        Billing
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
+                        Notes
+                    </a>
+
+
+                    <a class="nav-link active " href="#" onclick="wizardChangeTab(7)">
+                        Invoices
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+                        Events
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
+                        Member Alerts
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+                        Activities
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+                        Check In History
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+                        Custom
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+                        User Defined Fields
+                    </a>
+
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+                        Documents
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="member-detail__content">
+                <div class="member-invoices__grid">
+
+                    <div class="section member-invoices__first-row">
+                        <div class="member-detail__dropdowns-wrapper">
+                            <div class="form-group member-detail__dropdowns-item">
+                                <label for="invoiceType" class="control-label">View</label>
+                                <select onkeydown="window.event.cancelBubble = true; return ( event.keyCode != 8 );"
+                                        id="invoiceType" name="invoiceType" size="1" class="form-control"
+                                        onchange="wizardRefreshForm()">
+                                    <option value="abc" selected="selected">ABC</option>
+                                    <option value="abcHistory">ABC History</option>
+                                    <option value="club">Club</option>
+                                    <option value="clubHistory">Club History</option>
+                                    <option value="prepay">Pre-Pay</option>
+                                    <option value="schedules">Schedules</option>
+                                    <option value="pendingPos">Pending POS</option>
+                                    <option value="preAbc">Previous Company Account History</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="member-invoices__subgrid">
+
+                        <div class="section-container member-invoices__subgrid_left">
+                            <div class="height-100">
+                                <div class="section personal-details-section card no_margins height-100">
+                                    <div class="card-body">
+
+
+                                        <div class="section-header">
+                                            <h4 class="navbar-title">Balance</h4>
+                                        </div>
+
+
+                                        <dl class="row">
+                                            <dt class="col">ABC Account Balance Due</dt>
+                                            <dd class="col">$0.00</dd>
+                                        </dl>
+
+                                        <dl class="row">
+                                            <dt class="col">Total ABC Account Balance</dt>
+                                            <dd class="col">$0.00</dd>
+                                        </dl>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="section-container member-invoices__subgrid_right">
+                            <div class="height-100">
+                                <div class="section personal-details-section card no_margins height-100">
+
+                                    <div class="card-body">
+                                        <div class="section-header">
+                                            <h4 class="navbar-title">Agreement Status</h4>
+                                        </div>
+                                        <dl class="row">
+                                            <dt class="col">Current Status</dt>
+
+                                            <dd class="col">OK</dd>
+
+
+                                        </dl>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div id="noAbcHistoryFoundAlert"
+                             style="color: rgb(97, 26, 21); background-color: rgb(253, 236, 234); border-color: rgba(97, 26, 21, 0.15);"
+                             class="status w-100 mb_24 member-invoices__subgrid_warning">
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M0.5 8C0.5 12.1423 3.85775 15.5 8 15.5C12.1423 15.5 15.5 12.1423 15.5 8C15.5 3.85775 12.1423 0.5 8 0.5C3.85775 0.5 0.5 3.85775 0.5 8ZM14 8C14 11.3137 11.3137 14 8 14C4.68629 14 2 11.3137 2 8C2 4.68629 4.68629 2 8 2C11.3137 2 14 4.68629 14 8ZM8.75 4.25V5.75H7.25V4.25H8.75ZM8.75 11.75V7.25H7.25V11.75H8.75Z"
+                                      fill="#611A15"></path>
+                            </svg>
+                            No ABC History or invoice data found
+                        </div>
+                    </div>
+                    <div class="text-right member-invoices__button">
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+
+                            <button id="addInvoiceButton" type="button"
+                                    onclick="parent.popMessage('Unable to edit this member because he or she is not Synced', 'Warning')"
+                                    class="btn primary-color-bg action-button">Add Invoice
+                            </button>
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop2"
+                                        onclick="parent.popMessage('Unable to edit this member because he or she is not Synced', 'Warning')"
+                                        type="button" class="btn primary-color-bg action-button dropdown-toggle"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="results" class="member-invoices__table">
+
+                        <script type="text/javascript">
+                            function initialize() {
+                                //findMissingStylesheetClasses()
+                                setEnableState('Print', '0' == '1');
+                                var elemEditInvoiceAmountDialogCaption = abcGetElementById('editInvoiceAmountDialogCaption');
+                                if (elemEditInvoiceAmountDialogCaption) {
+                                    elemEditInvoiceAmountDialogCaption.style.height = '40px';
+                                }
+                                openModal();
+                            }
+
+                            function openModal() {
+                                var modalToOpen = '';
+                                //immediately clear this field to avoid a loop upon reloading this page
+                                if (modalToOpen) {
+                                    if (modalToOpen === 'RecurringServices') {
+                                        var agreementId = '6cc6337ab2d5443082ec344cbec8ab5b';
+                                        var pendingPosId = '';
+                                        showShowRecurringServices(agreementId, loadPosWithTransaction(pendingPosId));
+                                    }
+                                }
+                            }
+
+                            function editInvoiceAmount(date, amount, profitCenter) {
+                                warnAboutAssociatedAgreements(function () {
+                                    editInvoice(date, profitCenter, amount);
+                                });
+                            }
+
+                            function editInvoice(date, profitCenter, amount) {
+                                if (amount && amount != null && amount != '') {
+                                    parent.authorizeAction({
+                                            securityFunction: 'mem_agr_invoice_edit_amount',
+                                            authorized: '1'
+                                        },
+                                        function () {
+                                            showEditInvoiceAmountDialog(date, profitCenter, amount);
+                                        },
+                                        page.beanName);
+                                } else {
+                                    parent.authorizeAction({
+                                            securityFunction: 'mem_agr_invoice_edit_abc_due_date',
+                                            authorized: '1'
+                                        },
+                                        function () {
+                                            showEditInvoiceDueDateDialog(date, profitCenter);
+                                        },
+                                        page.beanName);
+
+
+                                }
+                            }
+
+                            function addAbcInvoiceSchedule() {
+                                if ('Yes' == 'No')
+                                    parent.fastDataTrakConfirm('Please use the Schedules view to add invoices to this agreement.', null, null, null, 'HIDE');
+                                else {
+                                    //old modal
+                                    //editAccount( 600, 300, '/AddAbcInvoiceScheduleCommand.pml' );
+
+                                    // new hip modal
+                                    addAbcInvoiceScheduleDialog(wizardRefreshForm);
+                                }
+                            }
+
+                            function freezeAccount() {
+                                var status = 'OK';
+                                var queue = 'REJECT';
+                                if ('Return For Collection' === status ||
+                                    'Cancelled' === status ||
+                                    'Expired' === status) {
+                                    parent.datatrakToaster.setFatalToasterMessage('This member is in ' + status + ' status and must be reinstated or rewritten before being frozen.');
+                                } else if ('POST' != queue &&
+                                    'REMOVED' != queue &&
+                                    'DELETED' != queue &&
+                                    'POST_CONVERSION' != queue &&
+                                    '' !== queue) {
+                                    parent.datatrakToaster.setFatalToasterMessage('Member must be in Posted, Posted Conversion, or Removed Queue to allow freeze.');
+                                } else {
+                                    var agreementId = '6cc6337ab2d5443082ec344cbec8ab5b';
+                                    parent.authorizeAction({
+                                            securityFunction: 'mem_agr_invoice_freeze_membership',
+                                            authorized: '1'
+                                        },
+                                        function () {
+                                            warnAboutAssociatedAgreements(function () {
+                                                freeze(agreementId,
+                                                    function (worked) {
+                                                        if (worked) {
+                                                            showShowRecurringServices(agreementId, wizardRefreshForm);
+                                                        }
+                                                    });
+                                            });
+                                        },
+                                        page.beanName);
+                                }
+                            }
+
+                            function cancelMembership() {
+                                var agreementId = '6cc6337ab2d5443082ec344cbec8ab5b';
+                                parent.authorizeAction({
+                                        securityFunction: 'mem_agr_invoice_cancel_membership',
+                                        authorized: '1'
+                                    }, function () {
+                                        warnAboutAssociatedAgreements(function () {
+                                            page.callAjax(AgreementRpc.checkMainframeForModal, function (results) {
+                                                hostUpCallback(results, function () {
+                                                    showCancelMemberPage(function (worked, transactionId) {
+                                                        if (worked) {
+                                                            showShowRecurringServices(agreementId, loadPosWithTransaction(transactionId));
+                                                        }
+                                                    });
+                                                });
+                                            }, 0, 0, null, 'memberId', 'ac2c15cb8d3c44f1b2d65e141dfca5fb');
+                                        });
+                                    },
+                                    page.beanName);
+                            }
+
+                            function warnAboutAssociatedAgreements(nextStep) {
+                                if ('0' == '1') {
+                                    var options =
+                                        {
+                                            message: 'This agreement is associated with other agreements.  You may want to consider changing the agreements listed in the Association section of the Agreement tab of this page.',
+                                            caption: 'Warning',
+                                            yesMethod: nextStep
+                                        };
+
+                                    parent.confirmOptions(options);
+                                } else {
+                                    nextStep();
+                                }
+                            }
+
+                            function editAccount(width, height, command) {
+                                warnAboutAssociatedAgreements(function () {
+                                    var labels = ['agreementId'];
+                                    var values = ['6cc6337ab2d5443082ec344cbec8ab5b'];
+
+                                    if (wizardShowModalIfMainframeAvailable(width, height, command, labels, values)) {
+                                        wizardRefreshForm();
+                                    }
+                                });
+                            }
+
+                            function unfreezeAccount() {
+                                parent.authorizeAction({
+                                        securityFunction: 'mem_agr_invoice_unfreeze_membership',
+                                        authorized: '1'
+                                    },
+                                    function () {
+                                        warnAboutAssociatedAgreements(function () {
+                                            unfreezeDialog('6cc6337ab2d5443082ec344cbec8ab5b', function () {
+                                                wizardRefreshForm();
+                                            });
+                                        });
+                                    },
+                                    page.beanName);
+                            }
+
+                            function editManagementType() {
+                                changeManagementType('6cc6337ab2d5443082ec344cbec8ab5b', wizardRefreshForm);
+                            }
+
+                            function reinstateMembership() {
+
+                                if ('1' === '0') {
+                                    var span = '<span style=\'color: var(--color-red-error);\'>';
+                                    var addErrorSpan = function (text) {
+                                        return span + text + '</span>';
+                                    };
+                                    var message = addErrorSpan('WARNING - NO INVOICES TO BILL!!!') + ' This will be a ' + addErrorSpan('FREE MEMBERSHIP UNLESS YOU ADD INVOICES') +
+                                        ' or ' + addErrorSpan('REWRITE') + ' the membership. ' +
+                                        'By continuing to Reinstate ' + addErrorSpan('WITHOUT') + ' Invoices you take ' + addErrorSpan('FULL') + ' responsibility for any missed billing. ' +
+                                        'If you have any questions about how to proceed, please contact ' +
+                                        'ABC Technical Support for assistance before proceeding with the reinstatement.';
+
+                                    quickConfirm(message, function () {
+                                        doReinstateMembership(false);
+                                    }, function () {
+                                    }, null);
+                                } else {
+                                    doReinstateMembership(true);
+                                }
+                            }
+
+                            function doReinstateMembership(askFirst) {
+                                var employeeId = '3D68162E6A9557DEE040010A88014F22';
+
+                                parent.authorizeAction({
+                                        securityFunction: 'mem_agr_invoice_reinstate_membership',
+                                        authorized: '1'
+                                    },
+                                    function () {
+                                        warnAboutAssociatedAgreements(function () {
+                                            if (employeeId == null) {
+                                                employeeId = globalActingEmployeeId;
+                                            }
+                                            var doReinstate = function () {
+                                                setValueById('reinstateMembershipFlag', '1');
+                                                setValueById('temporaryActingEmployeeId', employeeId);
+                                                wizardRefreshForm();
+                                            };
+
+                                            if (askFirst) {
+                                                parent.fastDataTrakConfirm('Click OK to reinstate membership.', doReinstate);
+                                            } else {
+                                                doReinstate();
+                                            }
+
+
+                                        });
+                                    }, page.beanName);
+                            }
+
+                            function showPopUpMenu(id) {
+                                var popup = abcGetElementById(id);
+                                popup.style.display = 'inline';
+                                popup.style.visibility = 'visible';
+                                var left = 998 - 163 + 'px';
+                                popup.style.left = left;
+                                popup.style.top = '16px';
+                                popup.style.width = '160px';
+                                popup.getElementsByTagName('div')[0].style.width = '150px';
+                            }
+                        </script>
+
+
+                        <div id="abcAccountInvoicesTableGridDiv" class="ag-theme-bootstrap"
+                             style="height:443px; width:100%; ">
+                            <div class="ag-root-wrapper ag-layout-normal ag-ltr">
+                                <div class="ag-root-wrapper-body ag-layout-normal" ref="rootWrapperBody">
+                                    <!--AG-GRID-COMP-->
+                                    <div class="ag-root ag-font-style ag-layout-normal" role="grid" ref="gridPanel">
+                                        <!--AG-HEADER-ROOT-->
+                                        <div class="ag-header" role="row" ref="headerRoot"
+                                             style="height: 50px; min-height: 50px;">
+                                            <div class="ag-pinned-left-header ag-hidden" ref="ePinnedLeftHeader"
+                                                 role="presentation" style="width: 0px;">
+                                                <div class="ag-header-row" role="presentation"
+                                                     style="top: 0px; height: 50px; width: 0px;"></div>
+                                            </div>
+                                            <div class="ag-header-viewport" ref="eHeaderViewport" role="presentation">
+                                                <div class="ag-header-container" ref="eHeaderContainer"
+                                                     role="presentation">
+                                                    <div class="ag-header-row" role="presentation"
+                                                         style="top: 0px; height: 50px; width: 1274px;">
+                                                        <div class="ag-header-cell" role="presentation"
+                                                             style="width: 254px; left: 0px;" col-id="field0">
+                                                            <div ref="eResize" class="ag-header-cell-resize"
+                                                                 role="presentation"></div><!--AG-CHECKBOX--><span
+                                                                class="ag-header-select-all ag-hidden"
+                                                                role="presentation" ref="cbSelectAll">  <span
+                                                                class="ag-checkbox-checked ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-checked"></span></span>  <span
+                                                                class="ag-checkbox-unchecked" role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-unchecked"></span></span>  <span
+                                                                class="ag-checkbox-indeterminate ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-indeterminate"></span></span>  <span
+                                                                class="ag-checkbox-label"
+                                                                role="presentation"></span></span>
+                                                            <div class="ag-cell-label-container" role="presentation">
+                                                                <div ref="eLabel" class="ag-header-cell-label"
+                                                                     role="presentation">
+                                                                    <div ref="eText" class="abc-header-cell-text"
+                                                                         role="columnheader">Due&nbsp;Date
+                                                                    </div>
+                                                                    <span ref="eFilter"
+                                                                          class="ag-header-icon ag-filter-icon ag-hidden"><span
+                                                                            class="ag-icon ag-icon-filter"></span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-header-cell" role="presentation"
+                                                             style="width: 510px; left: 254px;" col-id="field1">
+                                                            <div ref="eResize" class="ag-header-cell-resize"
+                                                                 role="presentation"></div><!--AG-CHECKBOX--><span
+                                                                class="ag-header-select-all ag-hidden"
+                                                                role="presentation" ref="cbSelectAll">  <span
+                                                                class="ag-checkbox-checked ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-checked"></span></span>  <span
+                                                                class="ag-checkbox-unchecked" role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-unchecked"></span></span>  <span
+                                                                class="ag-checkbox-indeterminate ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-indeterminate"></span></span>  <span
+                                                                class="ag-checkbox-label"
+                                                                role="presentation"></span></span>
+                                                            <div class="ag-cell-label-container" role="presentation">
+                                                                <div ref="eLabel" class="ag-header-cell-label"
+                                                                     role="presentation">
+                                                                    <div ref="eText" class="abc-header-cell-text"
+                                                                         role="columnheader">Profit&nbsp;Center
+                                                                    </div>
+                                                                    <span ref="eFilter"
+                                                                          class="ag-header-icon ag-filter-icon ag-hidden"><span
+                                                                            class="ag-icon ag-icon-filter"></span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ag-header-cell" role="presentation"
+                                                             style="width: 255px; left: 764px;" col-id="field2">
+                                                            <div ref="eResize" class="ag-header-cell-resize"
+                                                                 role="presentation"></div><!--AG-CHECKBOX--><span
+                                                                class="ag-header-select-all ag-hidden"
+                                                                role="presentation" ref="cbSelectAll">  <span
+                                                                class="ag-checkbox-checked ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-checked"></span></span>  <span
+                                                                class="ag-checkbox-unchecked" role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-unchecked"></span></span>  <span
+                                                                class="ag-checkbox-indeterminate ag-hidden"
+                                                                role="presentation"><span
+                                                                class="ag-icon ag-icon-checkbox-indeterminate"></span></span>  <span
+                                                                class="ag-checkbox-label"
+                                                                role="presentation"></span></span>
+                                                            <div class="ag-cell-label-container" role="presentation">
+                                                                <div ref="eLabel" class="ag-header-cell-label"
+                                                                     role="presentation">
+                                                                    <div ref="eText" class="abc-header-cell-text"
+                                                                         role="columnheader">
+                                                                        <div style="text-align:right; padding-right: 5px;">
+                                                                            Invoice&nbsp;Amount
+                                                                        </div>
+                                                                    </div>
+                                                                    <span ref="eFilter"
+                                                                          class="ag-header-icon ag-filter-icon ag-hidden"><span
+                                                                            class="ag-icon ag-icon-filter"></span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-pinned-right-header ag-hidden" ref="ePinnedRightHeader"
+                                                 role="presentation" style="width: 0px;">
+                                                <div class="ag-header-row" role="presentation"
+                                                     style="top: 0px; height: 50px; width: 0px;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="ag-floating-top" ref="eTop" role="presentation"
+                                             style="min-height: 0px; height: 0px;">
+                                            <div class="ag-pinned-left-floating-top" ref="eLeftTop" role="presentation"
+                                                 style="width: 0px; min-width: 0px;"></div>
+                                            <div class="ag-floating-top-viewport ag-layout-normal" ref="eTopViewport"
+                                                 role="presentation">
+                                                <div class="ag-floating-top-container" ref="eTopContainer"
+                                                     role="presentation" style="width: 1274px;"></div>
+                                            </div>
+                                            <div class="ag-pinned-right-floating-top" ref="eRightTop"
+                                                 role="presentation" style="width: 0px; min-width: 0px;"></div>
+                                            <div class="ag-floating-top-full-width-container ag-hidden"
+                                                 ref="eTopFullWidthContainer" role="presentation"></div>
+                                        </div>
+                                        <div class="ag-body ag-layout-normal ag-row-no-animation" ref="eBody"
+                                             role="presentation">
+                                            <div class="ag-pinned-left-cols-viewport-wrapper ag-hidden"
+                                                 ref="eLeftViewportWrapper" role="presentation"
+                                                 style="width: 0px; min-width: 0px;">
+                                                <div class="ag-pinned-left-cols-viewport" ref="eLeftViewport"
+                                                     role="presentation" style="width: 0px; min-width: 0px;">
+                                                    <div class="ag-pinned-left-cols-container" ref="eLeftContainer"
+                                                         role="presentation"
+                                                         style="width: 0px; min-width: 0px; height: 1px;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-body-viewport-wrapper ag-layout-normal"
+                                                 ref="eBodyViewportWrapper" role="presentation">
+                                                <div class="ag-body-viewport ag-layout-normal" ref="eBodyViewport"
+                                                     role="presentation">
+                                                    <div class="ag-body-container ag-layout-normal" ref="eBodyContainer"
+                                                         role="presentation" style="width: 1274px; height: 1px;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-pinned-right-cols-viewport-wrapper ag-hidden"
+                                                 ref="eRightViewportWrapper" role="presentation"
+                                                 style="width: 0px; min-width: 0px;">
+                                                <div class="ag-pinned-right-cols-viewport" ref="eRightViewport"
+                                                     role="presentation" style="width: 0px; min-width: 0px;">
+                                                    <div class="ag-pinned-right-cols-container" ref="eRightContainer"
+                                                         role="presentation"
+                                                         style="width: 0px; min-width: 0px; height: 1px;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ag-full-width-viewport-wrapper" ref="eFullWidthViewportWrapper"
+                                                 role="presentation">
+                                                <div class="ag-full-width-viewport ag-hidden" ref="eFullWidthViewport"
+                                                     role="presentation">
+                                                    <div class="ag-full-width-container" ref="eFullWidthContainer"
+                                                         role="presentation" style="height: 1px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ag-floating-bottom" ref="eBottom" role="presentation"
+                                             style="min-height: 0px; height: 0px;">
+                                            <div class="ag-pinned-left-floating-bottom" ref="eLeftBottom"
+                                                 role="presentation" style="width: 0px; min-width: 0px;"></div>
+                                            <div class="ag-floating-bottom-viewport" ref="eBottomViewport"
+                                                 role="presentation">
+                                                <div class="ag-floating-bottom-container" ref="eBottomContainer"
+                                                     role="presentation" style="width: 1274px;"></div>
+                                            </div>
+                                            <div class="ag-pinned-right-floating-bottom" ref="eRightBottom"
+                                                 role="presentation" style="width: 0px; min-width: 0px;"></div>
+                                            <div class="ag-floating-bottom-full-width-container ag-hidden"
+                                                 ref="eBottomFullWidthContainer" role="presentation"></div>
+                                        </div>
+                                        <div class="ag-overlay" ref="eOverlay">
+                                            <div class="ag-overlay-panel" role="presentation">
+                                                <div class="ag-overlay-wrapper ag-overlay-no-rows-wrapper ag-layout-normal"
+                                                     ref="noRowsOverlayWrapper"><span class="ag-overlay-no-rows-center">No Rows To Show</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--AG-PAGINATION-->
+                                <div class="ag-paging-panel ag-font-style ag-hidden">
+                <span ref="eSummaryPanel" class="ag-paging-row-summary-panel">
+                    <span ref="lbFirstRowOnPage"></span> to <span ref="lbLastRowOnPage"></span> of <span
+                        ref="lbRecordCount"></span>
+                </span>
+                                    <span class="ag-paging-page-summary-panel">
+                    <button type="button" class="ag-paging-button" ref="btFirst">First</button>
+                    <button type="button" class="ag-paging-button" ref="btPrevious">Previous</button>
+                    Page <span ref="lbCurrent"></span> of <span ref="lbTotal"></span>
+                    <button type="button" class="ag-paging-button" ref="btNext">Next</button>
+                    <button type="button" class="ag-paging-button" ref="btLast">Last</button>
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript" charset="utf-8">
+                            var lastCol = '';
+
+                            function onSelectionChangedabcAccountInvoicesTable() {
+                                var selectedRows = abcAccountInvoicesTableOptions.api.getSelectedRows();
+                                var selectedRowsString = '';
+                                selectedRows.forEach(function (selectedRow, index) {
+                                    if (index !== 0) {
+                                        selectedRowsString += ', ';
+                                    }
+                                    selectedRowsString += selectedRow.make;
+                                });
+                                //document.querySelector('#selectedRows').innerHTML = selectedRowsString;
+                            }
+
+                            function onSortChangedabcAccountInvoicesTable(params) {
+                                var sortModel = abcAccountInvoicesTableOptions.api.getSortModel();
+                                if (sortModel.length > 0) {
+                                    resetHeaders(params);
+                                    var sortColumn = sortModel[0].colId;
+                                    lastCol = sortColumn;
+                                    var column = params.columnApi.getColumn(sortColumn);
+                                    column.colDef.headerClass = 'abc-header-cell';
+                                    params.api.refreshHeader();
+                                } else {
+                                    resetHeaders(params);
+                                }
+                            }
+
+                            var abcAccountInvoicesTableRowData = [];
+                            var abcAccountInvoicesTableColumnDef = [
+                                {
+                                    headerName: 'Due&nbsp;Date ',
+                                    field: 'field0',
+                                    width: 150,
+                                    autoHeight: true,
+                                    cellStyle: {'padding-left': '5px'},
+                                    cellRenderer: 'htmlRenderer',
+                                    comparator: genericComparator,
+                                    suppressMovable: true
+                                },
+                                {
+                                    headerName: 'Profit&nbsp;Center',
+                                    field: 'field1',
+                                    width: 300,
+                                    autoHeight: true,
+                                    cellStyle: {'padding-left': '5px'},
+                                    cellRenderer: 'wordWrapRenderer',
+                                    comparator: genericComparator,
+                                    suppressMovable: true
+                                },
+                                {
+                                    headerName: '<div style="text-align:right; padding-right: 5px;"> Invoice&nbsp;Amount </div>',
+                                    field: 'field2',
+                                    width: 150,
+                                    autoHeight: true,
+                                    cellStyle: {'text-align': 'right', 'padding-right': '5px'},
+                                    cellRenderer: 'htmlRenderer',
+                                    comparator: genericComparator,
+                                    suppressMovable: true
+                                },
+                                {
+                                    headerName: '<div style="text-align:right; padding-right: 5px;"> Amount&nbsp;Due </div>',
+                                    field: 'field3',
+                                    width: 150,
+                                    autoHeight: true,
+                                    cellStyle: {'text-align': 'right', 'padding-right': '5px'},
+                                    cellRenderer: 'htmlRenderer',
+                                    comparator: genericComparator,
+                                    suppressMovable: true
+                                },
+                            ];
+                            var abcAccountInvoicesTableOptions = {
+                                columnDefs: abcAccountInvoicesTableColumnDef,
+                                rowData: abcAccountInvoicesTableRowData,
+                                components: {
+                                    wrapRenderer: WrapRenderer,
+                                    htmlRenderer: HtmlRenderer,
+                                    wordWrapRenderer: WordWrapRenderer
+                                },
+                                headerHeight: 50,
+                                rowHeight: 50,
+                                defaultColDef: {
+                                    width: 100,
+                                    comparator: genericComparator, headerComponentParams: {
+                                        template:
+                                            '<div class=\'ag-cell-label-container\' role=\'presentation\'>' +
+                                            '<span ref=\'eMenu\' class=\'ag-header-icon ag-header-cell-menu-button\'></span>' +
+                                            '<div ref=\'eLabel\' class=\'ag-header-cell-label\' role=\'presentation\'>' +
+                                            '<span ref=\'eSortOrder\' class=\'ag-header-icon ag-sort-order\' ></span>' +
+                                            '<span ref=\'eSortAsc\' class=\'ag-header-icon ag-sort-ascending-icon\' ></span>' +
+                                            '<span ref=\'eSortDesc\' class=\'ag-header-icon ag-sort-descending-icon\' ></span>' +
+                                            '<span ref=\'eSortNone\' class=\'ag-header-icon ag-sort-none-icon\' ></span>' +
+                                            '<div ref=\'eText\' class=\'abc-header-cell-text\' role=\'columnheader\'></div>' +
+                                            '<span ref=\'eFilter\' class=\'ag-header-icon ag-filter-icon\'></span>' +
+                                            '</div>' +
+                                            '</div>'
+                                    }
+                                },
+                                onSelectionChanged: onSelectionChangedabcAccountInvoicesTable,
+                                onSortChanged: onSortChangedabcAccountInvoicesTable,
+                                enableColResize: true,
+                                onFirstDataRendered: function (event) {
+                                    document.querySelector('#abcAccountInvoicesTableGridDiv.ag-theme-bootstrap .ag-body-viewport').classList.add('scrollbar-macosx');
+                                },
+                                suppressRowClickSelection: true,
+                                rowSelection: 'single',
+                                onGridReady: function (event) {
+                                    event.api.sizeColumnsToFit();
+                                    event.api.resetRowHeights();
+                                }
+                            };
+                            var abcAccountInvoicesTableGridDiv = document.querySelector('#abcAccountInvoicesTableGridDiv');
+                            new agGrid.Grid(abcAccountInvoicesTableGridDiv, abcAccountInvoicesTableOptions);
+
+                        </script>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

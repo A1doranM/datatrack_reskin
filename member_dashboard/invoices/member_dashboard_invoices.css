@@ -36,13 +36,24 @@
   grid-row: 1;
   margin-bottom: 24px;
 }
-.member-invoices__grid__subgrid_warning {
+.member-invoices__grid__subgrid__warnings-wrapper {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1/span 3;
   -ms-grid-row: 2;
   grid-row: 2;
   margin: 0;
+}
+.member-invoices__grid__subgrid__warnings-wrapper > * {
+  margin-top: 24px;
+}
+.member-invoices__grid__subgrid__warnings-wrapper:first-child {
+  margin-top: 0;
+}
+.member-invoices__grid__subgrid__warning {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 .member-invoices__grid__button {
   -ms-grid-row: 5;

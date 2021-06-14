@@ -18,7 +18,9 @@
                 <div class="member-detail__info">
                     <dl class="member-info__type">
                         <dt class="member-detail__info-title">Membership Type</dt>
-                        <dd class="member-detail__info-text"><a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a></dd>
+                        <dd class="member-detail__info-text">
+                            <a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a>
+                        </dd>
                     </dl>
 
                     <dl class="member-info__status">
@@ -27,109 +29,99 @@
                     </dl>
                     <dl class="member-info__barcode">
                         <dt class="member-detail__info-title">Barcode</dt>
-                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#" onclick="changeBarcode()">JERM</a></dd>
+                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#"
+                                                                onclick="changeBarcode()">JERM</a></dd>
                     </dl>
                 </div>
             </div>
-            <script>
-                function editMembershipType() {
-                    var isPersonalUpdate = false;
-                    updateMemberMembershipType('ea61d8ec3b134d15abada6b0add4ae50', isPersonalUpdate, function () {
-                        wizardRefreshForm();
-                    });
-                }
-
-                function changeBarcode() {
-                    changeMemberBarcode('ea61d8ec3b134d15abada6b0add4ae50',
-                        function (barcode) {
-                            if (barcode) {
-                                setInnerHtmlById('barcodeContainer', barcode);
-                                $('.member-barcode').html(barcode);
-                            }
-                        });
-                }
-
-            </script>
         </div>
 
         <div class="member-detail__grid">
-            <div class="d-flex flex-column member-details__navigation">
-                <div class="section member-navigation">
-                    <div class="nav flex-column" aria-orientation="vertical">
+            <div class="section member-navigation member-detail__navigation">
+                <div class="nav flex-column" aria-orientation="vertical">
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
+                        Personal
+                    </a>
 
 
-                        <a class="nav-link active " href="#" onclick="wizardChangeTab(2)">
-                            Personal
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
+                        Agreement
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
-                            Agreement
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
+                        Services
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
-                            Services
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
+                        Billing
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
-                            Billing
-                        </a>
+
+                    <a class="nav-link active " href="#" onclick="wizardChangeTab(6)">
+                        Notes
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(6)">
-                            Notes
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
+                        Invoices
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
-                            Invoices
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
+                        Events
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
-                            Events
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
+                        Member Alerts
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
-                            Member Alerts
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
+                        Activities
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
-                            Activities
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
+                        Check In History
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
-                            Check In History
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
+                        Custom
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
-                            Custom
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
+                        User Defined Fields
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
-                            User Defined Fields
-                        </a>
+
+                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
+                        Documents
+                    </a>
 
 
-                        <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
-                            Documents
-                        </a>
-
-
-                    </div>
                 </div>
-
             </div>
-            <div class="d-flex flex-column member-details__content member-personal-details">
-                <div class="member-detail__personal-subgrid">
-                    <div class="section-container member-detail__personal-card">
+            <div class="member-details__content member-personal-details">
+                <div class="member-personal__grid">
+                    <div class="section-container member-personal__personal-card">
                         <div class="section personal-details-section personal-details card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -209,7 +201,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-detail__demographics-card">
+                    <div class="section-container member-personal__demographics-card">
                         <div class="section personal-details-section demographics card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -300,7 +292,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-detail__messaging-card">
+                    <div class="section-container member-personal__messaging-card">
                         <div class="section personal-details-section messaging-marketing card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -348,7 +340,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-detail__preferences-card">
+                    <div class="section-container member-personal__preferences-card">
                         <div class="section personal-details-section access-code-data-preferences card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -399,7 +391,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-detail__lockers-card">
+                    <div class="section-container member-personal__lockers-card">
                         <div class="section personal-details-section lockers-section card">
                             <div class="card-body">
                                 <div class="section-header">

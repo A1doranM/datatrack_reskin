@@ -2,8 +2,8 @@
   margin: 0;
 }
 
-.member-detail__grid {
-  .&__personal-subgrid {
+.member-personal {
+  &__grid{
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 457px 16px 457px;

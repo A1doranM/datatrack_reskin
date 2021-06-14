@@ -1,17 +1,47 @@
-/* Error: Expected identifier.
- *   ,
- * 6 |   .&__personal-subgrid{
- *   |    ^
- *   '
- *   member_dashboard_personal.scss 6:4  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected identifier.\a   \2577 \a 6 \2502    .&__personal-subgrid{\d\a   \2502     ^\a   \2575 \a   member_dashboard_personal.scss 6:4  root stylesheet";
+.member-navigation {
+  margin: 0;
 }
+
+.member-personal__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 457px 16px 457px;
+  grid-template-columns: 457px 16px 457px;
+  -ms-grid-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content;
+  -ms-grid-rows: max-content 24px max-content 24px max-content;
+  grid-template-rows: -webkit-max-content 24px -webkit-max-content 24px -webkit-max-content;
+  grid-template-rows: max-content 24px max-content 24px max-content;
+}
+.member-personal__personal-card {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+.member-personal__demographics-card {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+.member-personal__messaging-card {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+.member-personal__preferences-card {
+  -ms-grid-column: 3;
+  grid-column: 3;
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+.member-personal__lockers-card {
+  -ms-grid-row: 5;
+  grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/span 3;
+}
+
+/*# sourceMappingURL=member_dashboard_personal.css.map */

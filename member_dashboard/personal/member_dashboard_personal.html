@@ -1,568 +1,431 @@
 <div class="container-fluid h-100 bg-light member-page personal-details">
     <div class="inner-container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item primary-color"><a href="#">Members</a></li>
-                <li class="breadcrumb-item primary-color"><a href="#" onclick="wizardChangeTab(1)">Kate Dr</a></li>
-                <li class="breadcrumb-item active">Details</li>
-            </ol>
-        </nav>
-
-        <div class="section member-detail__header">
-            <div class="member-detail__image-wrapper">
-                <img onerror="this.src='/images/bootstrap/nophoto_placeholder_100x120.svg';"
-                     src="/images/bootstrap/nophoto_placeholder_100x120.svg" class="member-detail__image">
-            </div>
-            <div class="member-detail__info-wrapper">
-                <h3 class="member-detail__title">Elscribbles HUNT Do Not Update</h3>
-                <div class="member-detail__info">
-                    <dl class="member-info__type">
-                        <dt class="member-detail__info-title">Membership Type</dt>
-                        <dd class="member-detail__info-text">
-                            <a class="link-primary" href="#" onclick="editMembershipType()">GLBFIT</a>
-                        </dd>
-                    </dl>
-
-                    <dl class="member-info__status">
-                        <dt class="member-detail__info-title">Membership Status</dt>
-                        <dd class="member-detail__info-text">Active</dd>
-                    </dl>
-                    <dl class="member-info__barcode">
-                        <dt class="member-detail__info-title">Barcode</dt>
-                        <dd class="member-detail__info-text"><a id="barcodeContainer" class="link-primary" href="#"
-                                                                onclick="changeBarcode()">JERM</a></dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
-
+        <%@ include file="/jsp/agreement/AgreementBreadcrumb.jsp" %>
+        <%@ include file="/jsp/agreement/AgreementMemberInfo_newDesign.jsp" %>
         <div class="member-detail__grid">
             <div class="section member-navigation member-detail__navigation">
-                <div class="nav flex-column" aria-orientation="vertical">
-
-
-
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(2)">
-                        Personal
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(3)">
-                        Agreement
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(4)">
-                        Services
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(5)">
-                        Billing
-                    </a>
-
-
-
-                    <a class="nav-link active " href="#" onclick="wizardChangeTab(6)">
-                        Notes
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(7)">
-                        Invoices
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(8)">
-                        Events
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(9)">
-                        Member Alerts
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(10)">
-                        Activities
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(11)">
-                        Check In History
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(12)">
-                        Custom
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(13)">
-                        User Defined Fields
-                    </a>
-
-
-
-                    <a class="nav-link  " href="#" onclick="wizardChangeTab(14)">
-                        Documents
-                    </a>
-
-
-                </div>
+                <%@ include file="/jsp/agreement/AgreementMemberNavigation.jsp" %>
             </div>
             <div class="member-details__content member-personal-details">
                 <div class="member-personal__grid">
                     <div class="section-container member-personal__personal-card">
-                        <div class="section personal-details-section personal-details card">
+                        <div class="section h-100 personal-details-section personal-details card">
                             <div class="card-body">
                                 <div class="section-header">
                                     <h4 class="navbar-title">Personal Details
-                                        <a class="link-primary" href="#" onclick="editPersonalDetails();" style="">Edit
-                                            Details</a>
+                                        <a class="link-primary" href="#"
+                                           onclick="editPersonalDetails();" style="">Edit Details</a>
                                     </h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col">Name</dt>
-                                    <dd class="col">Kate Dr</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Name</dt>
+                                    <dd class="col no-padding"><dt:value property="fullName"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Gender</dt>
-                                    <dd class="col">Female</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Gender</dt>
+                                    <dd class="col no-padding"><dt:value property="gender"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Date of Birth</dt>
-                                    <dd class="col">03/27/1986</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Date of Birth</dt>
+                                    <dd class="col no-padding"><dt:value property="dateOfBirth"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Social Security #</dt>
-                                    <dd class="col">XXXXX6789</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Social Security #</dt>
+                                    <dd class="col no-padding"><dt:value property="maskSocialSecurityNumber"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Occupation</dt>
-                                    <dd class="col">OCCUP1</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Occupation</dt>
+                                    <dd class="col no-padding"><dt:value property="occupation"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Employer</dt>
-                                    <dd class="col">Employer K1</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Employer</dt>
+                                    <dd class="col no-padding"><dt:value property="employer"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                                 <div class="section-header internal-header">
                                     <h4 class="navbar-title">Membership Details
-                                        <a class="link-primary" href="#" onclick="editMembershipDetails();" style="">Edit
+                                        <a class="link-primary" href="#"
+                                           onclick="editMembershipDetails();" style="">Edit
                                             Membership</a>
                                     </h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col" style="min-width: 76px">Barcode</dt>
-                                    <dd class="col member-barcode" style="padding-left: 0">090001234</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding" style="min-width: 76px">Barcode</dt>
+                                    <dd class="col member-barcode" style="padding-left: 0"><dt:value
+                                            property="memberBarcode" javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Previous Agreement #</dt>
-                                    <dd class="col">12345685</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Previous Agreement #</dt>
+                                    <dd class="col no-padding"><dt:value property="previousAgreementNumber"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Wellness Program ID</dt>
-                                    <dd class="col">12h</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Wellness Program ID</dt>
+                                    <dd class="col no-padding"><dt:value property="healthwaysId"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Membership Type</dt>
-
-
-                                    <dd class="col">
-                                        <a class="link-primary" href="#" onclick="editMembershipType();"
-                                           style="">ASDF</a>
-                                    </dd>
-
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Membership Type</dt>
+                                    <dt:ifEqual first="${agreementType}" second="PROSPECT">
+                                        <dd class="col no-padding"><dt:value property="agreementType"
+                                                                             javaScriptSafe="0"/></dd>
+                                    </dt:ifEqual>
+                                    <dt:ifNotEqual first="${agreementType}" second="PROSPECT">
+                                        <dd class="col no-padding">
+                                            <a class="link-primary" href="#"
+                                               onclick="editMembershipType();" style=""><dt:value
+                                                    property="agreementType"
+                                                    javaScriptSafe="0"/></a>
+                                        </dd>
+                                    </dt:ifNotEqual>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Group</dt>
-                                    <dd class="col">ABC Employee</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Group</dt>
+                                    <dd class="col no-padding"><dt:value property="memberGroup"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Member Misc 1</dt>
-                                    <dd class="col">Misc 01</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Member Misc 1</dt>
+                                    <dd class="col no-padding"><dt:value property="miscellaneous1"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Member Misc 2</dt>
-                                    <dd class="col">Misc 02</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Member Misc 2</dt>
+                                    <dd class="col no-padding"><dt:value property="miscellaneous2"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Member Misc 3</dt>
-                                    <dd class="col">Misc 03</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Member Misc 3</dt>
+                                    <dd class="col no-padding"><dt:value property="miscellaneous3"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                             </div>
                         </div>
                     </div>
                     <div class="section-container member-personal__demographics-card">
-                        <div class="section personal-details-section demographics card">
+                        <div class="section h-100 personal-details-section demographics card">
                             <div class="card-body">
                                 <div class="section-header">
                                     <h4 class="navbar-title">Demographics
-                                        <a class="link-primary" href="#" onclick="editContact();" style="">Edit</a>
+                                        <a class="link-primary" href="#" onclick="editContact();"
+                                           style="">Edit</a>
                                     </h4>
                                 </div>
-
-                                <dl class="row">
-                                    <dt class="col">Street</dt>
-                                    <dd class="col">Red Stone</dd>
+                                <dt:ifEqual first="${addressLines}" second="1">
+                                    <dl class="row no-margins">
+                                        <dt class="col no-padding">Street</dt>
+                                        <dd class="col no-padding"><dt:value property="street"
+                                                                             javaScriptSafe="0"/></dd>
+                                    </dl>
+                                </dt:ifEqual>
+                                <dt:ifNotEqual first="${addressLines}" second="1">
+                                    <dl class="row no-margins">
+                                        <dt class="col no-padding">Address 1</dt>
+                                        <dd class="col no-padding"><dt:value property="street"
+                                                                             javaScriptSafe="0"/></dd>
+                                    </dl>
+                                    <dl class="row no-margins">
+                                        <dt class="col no-padding">Address 2</dt>
+                                        <dd class="col no-padding"><dt:value property="address2"
+                                                                             javaScriptSafe="0"/></dd>
+                                    </dl>
+                                </dt:ifNotEqual>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">City</dt>
+                                    <dd class="col no-padding"><dt:value property="city" javaScriptSafe="0"/></dd>
                                 </dl>
-
-
-                                <dl class="row">
-                                    <dt class="col">City</dt>
-                                    <dd class="col">Belmont</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">State</dt>
+                                    <dd class="col no-padding"><dt:value property="stateName"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">State</dt>
-                                    <dd class="col">California</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Zip Code</dt>
+                                    <dd class="col no-padding"><dt:value property="zipCode"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Zip Code</dt>
-                                    <dd class="col">94002</dd>
-                                </dl>
-
-                                <dl class="row">
-                                    <dt class="col">Country</dt>
-                                    <dd class="col">United States</dd>
-                                </dl>
-
-                                <dl class="row">
-                                    <dt class="col">Email Address</dt>
-                                    <dd class="col">
-
-                                        <a class="link-primary" href="#"
-                                           onclick="sendMail('49923774ea594ec984ed5418c856ac03')" style="">
-                                            kate@email.com1
-                                        </a>
-
+                                <dt:ifNotEqual first="${countryCount}" second="1">
+                                    <dl class="row no-margins">
+                                        <dt class="col no-padding">Country</dt>
+                                        <dd class="col no-padding"><dt:value property="countryCaption"
+                                                                             javaScriptSafe="0"/></dd>
+                                    </dl>
+                                </dt:ifNotEqual>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Email Address</dt>
+                                    <dd class="col no-padding">
+                                        <dt:ifNotEqual first="${email}" second="">
+                                            <a class="link-primary" href="#"
+                                               onclick="sendMail('<dt:value javaScriptSafe="1"
+                                            property="memberId"/>')"
+                                            style="">
+                                            <dt:value property="email" javaScriptSafe="1"/>
+                                            </a>
+                                        </dt:ifNotEqual>
                                     </dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Driver's License</dt>
-                                    <dd class="col">1234567890</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Driver's License</dt>
+                                    <dd class="col no-padding"><dt:value property="driversLicense"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Primary Phone</dt>
-                                    <dd class="col">(123) 456-7890</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Primary Phone</dt>
+                                    <dd class="col no-padding"><dt:value property="homePhone"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Mobile Phone</dt>
-                                    <dd class="col">(987) 654-3210</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Mobile Phone</dt>
+                                    <dd class="col no-padding"><dt:value property="cellPhone"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Work Phone</dt>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Work Phone</dt>
                                     <dd class="col phone-number-container">
-                                        <span class="phone-number">(112) 233-4455</span>
+                                                        <span class="phone-number"><dt:value property="workPhone"
+                                                                                             javaScriptSafe="0"/></span>
                                         <span>ext.</span>
-                                        <span class="phone-extension"></span>
+                                        <span class="phone-extension"><dt:value property="workExtension"
+                                                                                javaScriptSafe="0"/></span>
                                     </dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Fax Number</dt>
-                                    <dd class="col">(321) 654-7896</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Fax Number</dt>
+                                    <dd class="col no-padding"><dt:value property="fax" javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Member Availability</dt>
-                                    <dd class="col">test MEMBER Availability</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Member Availability</dt>
+                                    <dd class="col no-padding"><dt:value property="memberAvailability"
+                                                                         javaScriptSafe="1"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Emergency Phone</dt>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Emergency Phone</dt>
                                     <dd class="col phone-number-container">
-                                        <span class="phone-number">(911) 911-9112</span>
+                                                        <span class="phone-number"><dt:value property="emergencyPhone"
+                                                                                             javaScriptSafe="0"/></span>
                                         <span>ext.</span>
-                                        <span class="phone-extension"></span>
+                                        <span class="phone-extension"><dt:value
+                                                property="emergencyExtension"
+                                                javaScriptSafe="0"/></span>
                                     </dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Emergency Contact</dt>
-                                    <dd class="col">Emerg F Emerg L</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Emergency Contact</dt>
+                                    <dd class="col no-padding"><dt:value property="emergencyName"
+                                                                         javaScriptSafe="1" htmlSafe="1"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Emergency Availability</dt>
-                                    <dd class="col">Em Av</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Emergency Availability</dt>
+                                    <dd class="col no-padding"><dt:value property="emergencyAvailability"
+                                                                         javaScriptSafe="1"/></dd>
                                 </dl>
                             </div>
                         </div>
                     </div>
                     <div class="section-container member-personal__messaging-card">
-                        <div class="section personal-details-section messaging-marketing card">
+                        <div class="section h-100 personal-details-section messaging-marketing card">
                             <div class="card-body">
                                 <div class="section-header">
                                     <h4 class="navbar-title">Messaging
-                                        <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                        <a class="link-primary" href="#"
+                                           onclick="editMessagePreferences();" style="">Edit</a>
                                     </h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col">Receive Emails</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive Emails</dt>
+                                    <dd class="col no-padding"><dt:value property="recieveEmail"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Email Address</dt>
-                                    <dd class="col"></dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Email Address</dt>
+                                    <dd class="col no-padding"><dt:value property="emailDisplay"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Receive Text</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive Text</dt>
+                                    <dd class="col no-padding"><dt:value property="recieveText"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Text Number</dt>
-                                    <dd class="col"></dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Text Number</dt>
+                                    <dd class="col no-padding"><dt:value property="textRecipiantNumber"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                                 <div class="section-header internal-header">
                                     <h4 class="navbar-title">Marketing
-                                        <a class="link-primary" href="#" onclick="editMessagePreferences();" style="">Edit</a>
+                                        <a class="link-primary" href="#"
+                                           onclick="editMessagePreferences();" style="">Edit</a>
                                     </h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col">Receive Emails</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive Emails</dt>
+                                    <dd class="col no-padding"><dt:value property="receiveMarketingEmails"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Receive SMS</dt>
-                                    <dd class="col">Yes</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive SMS</dt>
+                                    <dd class="col no-padding"><dt:value property="receiveMarketingSMS"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Receive Direct Mail</dt>
-                                    <dd class="col">Yes</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive Direct Mail</dt>
+                                    <dd class="col no-padding"><dt:value property="receiveMarketingDirectMail"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Receive Push Notifications</dt>
-                                    <dd class="col">Yes</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Receive Push Notifications</dt>
+                                    <dd class="col no-padding"><dt:value
+                                            property="receiveMarketingPushNotifications"
+                                            javaScriptSafe="0"/></dd>
                                 </dl>
                             </div>
                         </div>
                     </div>
                     <div class="section-container member-personal__preferences-card">
-                        <div class="section personal-details-section access-code-data-preferences card">
+                        <div class="section h-100 personal-details-section access-code-data-preferences card">
                             <div class="card-body">
                                 <div class="section-header">
                                     <h4 class="navbar-title">Access Code
                                         <a class="link-primary" href="#" onclick="editAccessCode();">Edit</a>
                                     </h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col">Access Code</dt>
-                                    <dd class="col">
-
-                                        ****
-
-
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Access Code</dt>
+                                    <dd class="col no-padding">
+                                        <dt:ifEqual first="${hasAccessCode}" second="1">
+                                            ****
+                                        </dt:ifEqual>
+                                        <dt:ifNotEqual first="${hasAccessCode}" second="1">
+                                            <%= JspSupport.NONE %>
+                                        </dt:ifNotEqual>
                                     </dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Failed Attempts</dt>
-                                    <dd class="col">0</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Failed Attempts</dt>
+                                    <dd class="col no-padding"><dt:value property="accessCodeFailures"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                                 <div class="section-header internal-header">
                                     <h4 class="navbar-title">Data Preferences</h4>
                                 </div>
-                                <dl class="row">
-                                    <dt class="col">Opt-Out CCPA</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Opt-Out CCPA</dt>
+                                    <dd class="col no-padding"><dt:value property="optOutCCPA"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Delete CCPA</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Delete CCPA</dt>
+                                    <dd class="col no-padding"><dt:value property="deleteCCPA"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Opt-Out GDPR</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Opt-Out GDPR</dt>
+                                    <dd class="col no-padding"><dt:value property="optOutGDPR"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Delete GDPR</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Delete GDPR</dt>
+                                    <dd class="col no-padding"><dt:value property="deleteGDPR"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Opt-Out Other</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Opt-Out Other</dt>
+                                    <dd class="col no-padding"><dt:value property="optOutOther"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
-                                <dl class="row">
-                                    <dt class="col">Delete Other</dt>
-                                    <dd class="col">No</dd>
+                                <dl class="row no-margins">
+                                    <dt class="col no-padding">Delete Other</dt>
+                                    <dd class="col no-padding"><dt:value property="deleteOther"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                             </div>
                         </div>
                     </div>
                     <div class="section-container member-personal__lockers-card">
-                        <div class="section personal-details-section lockers-section card">
-                            <div class="card-body">
-                                <div class="section-header">
-                                    <h4 class="navbar-title">Locker
-
-                                        <a class="link-primary" href="#"
-                                           onclick="addLocker('49923774ea594ec984ed5418c856ac03');">Add</a>
-
-                                        <a class="link-primary" href="#"
-                                           onclick="memberLockerHistory('49923774ea594ec984ed5418c856ac03');">History</a>
-                                    </h4>
-                                </div>
-                                <table class="table data-header">
-                                    <thead>
-                                    <tr>
-                                        <th class="col-club-location">CLUB LOCATION</th>
-                                        <th class="col-locker-status">LOCKER STATUS</th>
-                                        <th class="col-number">NUMBER</th>
-                                        <th class="col-start-and-expiration">START &amp; EXPIRATION</th>
-                                        <th class="col-type">TYPE</th>
-                                        <th class="col-member">MEMBER</th>
-                                    </tr>
-                                    </thead>
+                        <div class="member-personal__lockers-wrapper">
+                            <h4 class="member-personal__lockers-header">Locker</h4>
+                            <div class="member-personal__locker-controls">
+                                <dt:ifEqual first="${active}" second="1">
+                                    <a class="link-primary" href="#"
+                                       onclick="addLocker('<dt:value property="selectedMemberId"
+                                    javaScriptSafe="0"/>');">Add</a>
+                                </dt:ifEqual>
+                                <a class="link-primary" href="#"
+                                   onclick="memberLockerHistory('<dt:value
+                                                           property="selectedMemberId"
+                                javaScriptSafe="0"/>');">History</a>
+                            </div>
+                        </div>
+                        <table class="table data-header">
+                            <thead>
+                            <tr>
+                                <th class="col-club-location">CLUB LOCATION</th>
+                                <th class="col-locker-status">LOCKER STATUS</th>
+                                <th class="col-number">NUMBER</th>
+                                <th class="col-start-and-expiration">START & EXPIRATION</th>
+                                <th class="col-type">TYPE</th>
+                                <th class="col-member">MEMBER</th>
+                            </tr>
+                            </thead>
+                        </table>
+                        <div class="bt-scroll">
+                            <div class="scrollbar-macosx">
+                                <table class="table data-table">
+                                    <tbody>
+                                    <dt:iterate property="lockers" index="index"
+                                                nameValuePair="1">
+                                        <tr>
+                                            <td class="col-club-location">
+                                                <div><dt:value property="CLUB"
+                                                               javaScriptSafe="0"/></div>
+                                                <div><dt:value property="LOCKER_LOCATION"
+                                                               javaScriptSafe="0"/></div>
+                                            </td>
+                                            <td class="col-locker-status">
+                                                <dt:value property="LOCKER_STATUS_NAME"
+                                                          javaScriptSafe="0"/>
+                                            </td>
+                                            <td class="col-number">
+                                                <a class="link-primary" href="#"
+                                                   onclick="editLocker('<dt:value
+                                                                           property="LOCK_ID"
+                                                javaScriptSafe="0"/>')">
+                                                <dt:value property="LOCKER_NUMBER"
+                                                          javaScriptSafe="0"/>
+                                                </a>
+                                            </td>
+                                            <td class="col-start-and-expiration">
+                                                <div><dt:value property="START_DATE"
+                                                               javaScriptSafe="0"/></div>
+                                                <dt:ifEqual first="${LOCKER_STATUS}"
+                                                            second="<%= com.seqtek.abcfs.dt.locker.LockerConfigurationState.LockerStatus.expired.getCode() %>">
+                                                    <div class="errorMessage"><dt:value
+                                                            property="EXPIRATION_DATE"
+                                                            javaScriptSafe="0"/></div>
+                                                </dt:ifEqual>
+                                                <dt:ifNotEqual first="${LOCKER_STATUS}"
+                                                               second="<%= com.seqtek.abcfs.dt.locker.LockerConfigurationState.LockerStatus.expired.getCode() %>">
+                                                    <div><dt:value property="EXPIRATION_DATE"
+                                                                   javaScriptSafe="0"/></div>
+                                                </dt:ifNotEqual>
+                                            </td>
+                                            <td class="col-type">
+                                                <dt:value property="LOCKER_TYPE"
+                                                          javaScriptSafe="0"/>
+                                            </td>
+                                            <td class="col-member">
+                                                <dt:value property="MEMBER_GUI"
+                                                          javaScriptSafe="0"/>
+                                            </td>
+                                        </tr>
+                                    </dt:iterate>
+                                    </tbody>
                                 </table>
-                                <div class="bt-scroll">
-                                    <div class="scroll-wrapper scrollbar-macosx" style="position: relative;">
-                                        <div class="scrollbar-macosx scroll-content"
-                                             style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 390px;">
-                                            <table class="table data-table">
-                                                <tbody>
-
-                                                <tr>
-                                                    <td class="col-club-location">
-                                                        <div>09003</div>
-                                                        <div>Bike</div>
-                                                    </td>
-                                                    <td class="col-locker-status">
-                                                        Assigned
-                                                    </td>
-                                                    <td class="col-number">
-                                                        <a class="link-primary" href="#"
-                                                           onclick="editLocker('9225fe786c0d4c8ebc23a8fc3d2a069f')">
-                                                            123456789 123456789 123456789 123456789 123456789
-                                                        </a>
-                                                    </td>
-                                                    <td class="col-start-and-expiration">
-                                                        <div>04/12/2021</div>
-
-
-                                                        <div>04/21/2023</div>
-
-                                                    </td>
-                                                    <td class="col-type">
-                                                        Bikes
-                                                    </td>
-                                                    <td class="col-member">
-                                                        Kate Dr
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="col-club-location">
-                                                        <div>09003</div>
-                                                        <div>Bike</div>
-                                                    </td>
-                                                    <td class="col-locker-status">
-                                                        Assigned
-                                                    </td>
-                                                    <td class="col-number">
-                                                        <a class="link-primary" href="#"
-                                                           onclick="editLocker('150810b090a44f12a72523d33ea12b48')">
-                                                            B00001
-                                                        </a>
-                                                    </td>
-                                                    <td class="col-start-and-expiration">
-                                                        <div>03/06/2021</div>
-
-
-                                                        <div>03/06/2024</div>
-
-                                                    </td>
-                                                    <td class="col-type">
-                                                        Bikes
-                                                    </td>
-                                                    <td class="col-member">
-                                                        Candy Mandy, Chrome Test Dont Update, Kate Dr, A A, Second Dra
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="col-club-location">
-                                                        <div>09003</div>
-                                                        <div>Bike</div>
-                                                    </td>
-                                                    <td class="col-locker-status">
-                                                        Expired
-                                                    </td>
-                                                    <td class="col-number">
-                                                        <a class="link-primary" href="#"
-                                                           onclick="editLocker('8ab1b5e31c6b4795a850b3f34d2c7e78')">
-                                                            Bike4
-                                                        </a>
-                                                    </td>
-                                                    <td class="col-start-and-expiration">
-                                                        <div>05/24/2021</div>
-
-                                                        <div class="errorMessage">05/18/2021</div>
-
-
-                                                    </td>
-                                                    <td class="col-type">
-                                                        Bikes
-                                                    </td>
-                                                    <td class="col-member">
-                                                        Kate Dr
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="col-club-location">
-                                                        <div>09003</div>
-                                                        <div>Bike</div>
-                                                    </td>
-                                                    <td class="col-locker-status">
-                                                        Assigned
-                                                    </td>
-                                                    <td class="col-number">
-                                                        <a class="link-primary" href="#"
-                                                           onclick="editLocker('d71ec554f4424650b47ab5940f9dc4c3')">
-                                                            BikeClassOne7
-                                                        </a>
-                                                    </td>
-                                                    <td class="col-start-and-expiration">
-                                                        <div>04/12/2021</div>
-
-
-                                                        <div>04/19/2024</div>
-
-                                                    </td>
-                                                    <td class="col-type">
-                                                        Bikes
-                                                    </td>
-                                                    <td class="col-member">
-                                                        Kate Dr
-                                                    </td>
-                                                </tr>
-
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="scroll-element scroll-x">
-                                            <div class="scroll-element_outer">
-                                                <div class="scroll-element_size"></div>
-                                                <div class="scroll-element_track"></div>
-                                                <div class="scroll-bar" style="width: 96px; left: 0px;"></div>
-                                            </div>
-                                        </div>
-                                        <div class="scroll-element scroll-y">
-                                            <div class="scroll-element_outer">
-                                                <div class="scroll-element_size"></div>
-                                                <div class="scroll-element_track"></div>
-                                                <div class="scroll-bar" style="height: 96px; top: 0px;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

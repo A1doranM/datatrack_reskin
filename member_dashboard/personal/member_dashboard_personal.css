@@ -43,5 +43,26 @@
   -ms-grid-column-span: 3;
   grid-column: 1/span 3;
 }
+.member-personal__lockers-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.member-personal__lockers-header {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+}
+.member-personal__locker-controls:first-child {
+  margin-right: 10px;
+}
+
+.outline-button_blue {
+  color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007bff;
+}
 
 /*# sourceMappingURL=member_dashboard_personal.css.map */

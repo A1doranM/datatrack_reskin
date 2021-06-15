@@ -1,0 +1,9 @@
+<div class="nav flex-column" aria-orientation="vertical">
+    <dt:iterate property="pages" index="index" nameValuePair="0">
+        <dt:ifNotContains first="0,1" second="<%= index %>">
+            <a class="nav-link <dt:ifEqual first=" ${selectedTab}" second="<%= index %>">active</dt:ifEqual> " href="#" onclick="wizardChangeTab(<%= index %>)">
+            <dt:value property="caption" javaScriptSafe="0"/>
+            </a>
+        </dt:ifNotContains>
+    </dt:iterate>
+</div>

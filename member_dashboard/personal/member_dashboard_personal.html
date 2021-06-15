@@ -6,9 +6,9 @@
             <div class="section member-navigation member-detail__navigation">
                 <%@ include file="/jsp/agreement/AgreementMemberNavigation.jsp" %>
             </div>
-            <div class="member-details__content member-personal-details">
+            <div class="member-detail__content member-personal-details">
                 <div class="member-personal__grid">
-                    <div class="section-container member-personal__personal-card">
+                    <div class="member-personal__personal-card">
                         <div class="section h-100 personal-details-section personal-details card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -34,8 +34,9 @@
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Social Security #</dt>
-                                    <dd class="col no-padding"><dt:value property="maskSocialSecurityNumber"
-                                                                         javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value
+                                            property="maskSocialSecurityNumber"
+                                            javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Occupation</dt>
@@ -61,8 +62,9 @@
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Previous Agreement #</dt>
-                                    <dd class="col no-padding"><dt:value property="previousAgreementNumber"
-                                                                         javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value
+                                            property="previousAgreementNumber"
+                                            javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Wellness Program ID</dt>
@@ -107,7 +109,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-personal__demographics-card">
+                    <div class="member-personal__demographics-card">
                         <div class="section h-100 personal-details-section demographics card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -137,7 +139,8 @@
                                 </dt:ifNotEqual>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">City</dt>
-                                    <dd class="col no-padding"><dt:value property="city" javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value property="city"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">State</dt>
@@ -196,7 +199,8 @@
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Fax Number</dt>
-                                    <dd class="col no-padding"><dt:value property="fax" javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value property="fax"
+                                                                         javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Member Availability</dt>
@@ -217,17 +221,19 @@
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Emergency Contact</dt>
                                     <dd class="col no-padding"><dt:value property="emergencyName"
-                                                                         javaScriptSafe="1" htmlSafe="1"/></dd>
+                                                                         javaScriptSafe="1"
+                                                                         htmlSafe="1"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Emergency Availability</dt>
-                                    <dd class="col no-padding"><dt:value property="emergencyAvailability"
-                                                                         javaScriptSafe="1"/></dd>
+                                    <dd class="col no-padding"><dt:value
+                                            property="emergencyAvailability"
+                                            javaScriptSafe="1"/></dd>
                                 </dl>
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-personal__messaging-card">
+                    <div class="member-personal__messaging-card">
                         <div class="section h-100 personal-details-section messaging-marketing card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -264,8 +270,9 @@
                                 </div>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Receive Emails</dt>
-                                    <dd class="col no-padding"><dt:value property="receiveMarketingEmails"
-                                                                         javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value
+                                            property="receiveMarketingEmails"
+                                            javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Receive SMS</dt>
@@ -274,8 +281,9 @@
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Receive Direct Mail</dt>
-                                    <dd class="col no-padding"><dt:value property="receiveMarketingDirectMail"
-                                                                         javaScriptSafe="0"/></dd>
+                                    <dd class="col no-padding"><dt:value
+                                            property="receiveMarketingDirectMail"
+                                            javaScriptSafe="0"/></dd>
                                 </dl>
                                 <dl class="row no-margins">
                                     <dt class="col no-padding">Receive Push Notifications</dt>
@@ -286,7 +294,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-personal__preferences-card">
+                    <div class="member-personal__preferences-card">
                         <div class="section h-100 personal-details-section access-code-data-preferences card">
                             <div class="card-body">
                                 <div class="section-header">
@@ -346,19 +354,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-container member-personal__lockers-card">
+                    <div class="member-personal__lockers-card">
                         <div class="member-personal__lockers-wrapper">
                             <h4 class="member-personal__lockers-header">Locker</h4>
                             <div class="member-personal__locker-controls">
+                                <button type="button" class="btn outline-button action-button"
+                                        onclick="memberLockerHistory('<dt:value
+                                                                property="selectedMemberId"
+                                javaScriptSafe="0"/>');">History</button>
                                 <dt:ifEqual first="${active}" second="1">
-                                    <a class="link-primary" href="#"
-                                       onclick="addLocker('<dt:value property="selectedMemberId"
-                                    javaScriptSafe="0"/>');">Add</a>
+                                    <button type="button" class="btn primary-color-bg action-button"
+                                            onclick="addLocker('<dt:value property="selectedMemberId"
+                                    javaScriptSafe="0"/>'); return false;">Add
+                                    </button>
                                 </dt:ifEqual>
-                                <a class="link-primary" href="#"
-                                   onclick="memberLockerHistory('<dt:value
-                                                           property="selectedMemberId"
-                                javaScriptSafe="0"/>');">History</a>
                             </div>
                         </div>
                         <table class="table data-header">
